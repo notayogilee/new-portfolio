@@ -1,1 +1,16 @@
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#open {
+  transform: rotate(-30deg);
+  transition: transform 0.5s linear;
+}
+
+/* body {
+  background-color: #333;
+  overflow-x: hidden;
+} */
