@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext } from 'react'
 import CircleNavContext from '../../context/circleNav/circleNavContext'
 import { makeStyles } from '@material-ui/core/styles'
 import {
@@ -10,7 +10,6 @@ const useStyles = makeStyles({
   root: {
     minHeight: '100vh',
     height: '100%',
-    // width: 'auto',
     background: '#d68438',
     color: '#F1B24B',
     padding: '50px',
@@ -28,7 +27,7 @@ const useStyles = makeStyles({
   },
 })
 
-const HomeScreen = () => {
+const ResumeScreen = () => {
   const circleNavContext = useContext(CircleNavContext)
   const classes = useStyles();
 
@@ -44,4 +43,4 @@ const HomeScreen = () => {
   )
 }
 
-export default HomeScreen;
+export default ResumeScreen;

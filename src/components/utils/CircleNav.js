@@ -13,13 +13,13 @@ const useStyles = makeStyles({
     width: '200px',
     background: '#333',
     borderRadius: '50%',
-    zIndex: 100,
-    transition: 'transform 0.5s linear'
+    zIndex: 200,
   },
   circleContainer: {
     position: 'fixed',
     top: '-100px',
-    left: '-100px'
+    left: '-100px',
+    transition: 'transform 0.5s linear'
   },
   iconButton: {
     color: '#fff',
@@ -29,12 +29,13 @@ const useStyles = makeStyles({
     height: '100px'
   },
   openButton: {
-    left: '60%'
+    position: 'absolute',
+    left: '70%'
   },
   closeButton: {
-    top: '60%',
-    tranform: 'rotate(90deg)',
-    transformOrigin: 'top left'
+    position: 'absolute',
+    top: '50%',
+    left: '-180%'
   }
 })
 
@@ -51,21 +52,19 @@ const CircleNav = () => {
     circleNavContext.closeCircleNav()
   }
 
-  const open = circleNavContext.open
+  const rotateCircleNav = circleNavContext.navId
 
   return (
-    <div className={classes.circleContainer}>
-      <div className={classes.circle}>
-        {!open &&
-          <IconButton className={classes.iconButton} style={{ left: '60%' }} onClick={handleOpen}>
-            <Menu fontSize="lg" className={classes.openButton} />
-          </IconButton>
-        }
-        {open &&
-          <IconButton className={classes.iconButton} style={{ left: '50%' }} onClick={handleClose}>
-            <Close />
-          </IconButton>
-        }
+    <div className={classes.circleContainer} id={rotateCircleNav}>
+      <div className={classes.circle} >
+
+        <IconButton className={classes.iconButton} onClick={handleOpen}>
+          <Menu fontSize="large" className={classes.openButton} />
+        </IconButton>
+        <IconButton className={classes.iconButton} onClick={handleClose}>
+          <Close fontSize="large" className={classes.closeButton} />
+        </IconButton>
+
       </div>
     </div>
   )

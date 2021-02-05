@@ -9,13 +9,15 @@ export default (state, action) => {
       return {
         ...state,
         open: true,
-        addId: action.payload
+        addId: action.payload.bodyId,
+        navId: action.payload.navId
       }
     case CLOSE_CIRCLE_NAV:
       return {
         ...state,
         open: false,
-        addId: action.payload
+        addId: action.payload.bodyId,
+        navId: action.payload.navId
       }
     default:
       return state;

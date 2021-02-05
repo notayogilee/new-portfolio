@@ -9,7 +9,8 @@ import {
 const CircleNavState = (props) => {
   const initialState = {
     open: false,
-    addId: ''
+    bodyId: '',
+    navId: '',
   }
 
   const [state, dispatch] = useReducer(CircleNavReducer, initialState)
@@ -18,7 +19,10 @@ const CircleNavState = (props) => {
   const openCircleNav = () => {
     dispatch({
       type: OPEN_CIRCLE_NAV,
-      payload: 'open'
+      payload: {
+        bodyId: 'open',
+        navId: 'rotateCircleNav',
+      }
     })
   }
 
@@ -26,14 +30,18 @@ const CircleNavState = (props) => {
   const closeCircleNav = () => {
     dispatch({
       type: CLOSE_CIRCLE_NAV,
-      payload: ''
+      payload: {
+        bodyId: '',
+        navId: ''
+      }
     })
   }
 
   return <CircleNavContext.Provider
     value={{
       open: state.open,
-      addId: state.addId,
+      bodyId: state.addId,
+      navId: state.navId,
       openCircleNav,
       closeCircleNav
     }}
