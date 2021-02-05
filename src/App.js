@@ -1,17 +1,17 @@
-import React from 'react';
-import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import HomeScreen from './components/screens/HomeScreen';
+import React from 'react'
+import CircleNavState from './context/circleNav/CircleNavState'
+import './App.css'
+import HomeScreen from './components/screens/HomeScreen'
+import CircleNav from './components/utils/CircleNav'
 
 function App() {
   return (
-    <div className="body">
-      <Router>
-        <Switch>
-          <Route component={HomeScreen} exact path="/" />
-        </Switch>
-      </Router>
-    </div>
+    <CircleNavState>
+      <div className="body">
+        <CircleNav />
+        <HomeScreen />
+      </div>
+    </CircleNavState>
   );
 }
 

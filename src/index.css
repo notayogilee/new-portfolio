@@ -6,7 +6,7 @@
 }
 
 #open {
-  transform: rotate(-30deg);
+  transform: rotate(-20deg);
   transition: transform 0.5s linear;
 }
 
