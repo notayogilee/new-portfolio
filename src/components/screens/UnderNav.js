@@ -6,6 +6,7 @@ import {
   Slide,
   Button
 } from '@material-ui/core'
+import zIndex from '@material-ui/core/styles/zIndex'
 
 const UnderNav = () => {
   const circleNavContext = useContext(CircleNavContext)
@@ -37,7 +38,7 @@ const UnderNav = () => {
       height: '100vh',
       width: '100%',
       background: '#333',
-      zIndex: 1,
+      // zIndex: 100,
       overflowX: 'hidden',
 
     }}>
@@ -49,10 +50,11 @@ const UnderNav = () => {
         bottom: '60px',
         left: 0,
         color: '#fff',
-        paddingLeft: '30px'
+        paddingLeft: '30px',
+        zIndex: 100
       }}>
         <Slide in={open} direction="right" timeout={500}>
-          <Button onClick={openHome}>
+          <Button onClick={openHome} style={{ zIndex: 100 }}>
             <Typography style={{ textTransform: 'uppercase', margin: '20px 0', color: '#fff' }}>Home</Typography>
           </Button>
 

@@ -15,14 +15,14 @@ const useStyles = makeStyles({
   root: {
     minHeight: '100vh',
     height: '100%',
-    // width: 'auto',
+    width: 'auto',
     background: '#d68438',
     color: '#F1B24B',
     padding: '50px',
-    overflowX: 'hidden',
+    overflow: 'hidden',
     transformOrigin: 'top left',
     transition: 'transform 0.5s linear',
-    zIndex: 100
+    zIndex: 90
   },
   content: {
     display: 'flex',

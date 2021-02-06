@@ -9,14 +9,14 @@ function App() {
   return (
     <CircleNavState>
       <ScreenState>
-        <div style={{ position: 'relative', maxWidth: '100vw' }}>
+        <div style={{ position: 'relative' }}>
           <div style={{ position: 'fixed', zIndex: 200 }}>
             <CircleNav />
           </div>
-          <div style={{ position: 'absolute', top: 0, left: 0, bottom: 0, right: 0, zIndex: 1 }}>
+          <div style={{ position: 'absolute', top: 0, left: 0, bottom: 0, right: 0 }}>
             <UnderNav />
           </div>
-          <div style={{ position: 'absolute', top: 0, left: 0, bottom: 0, right: 0, zIndex: 10 }}>
+          <div style={{ position: 'fixed', top: 0, left: 0, bottom: 0, right: 0 }}>
             <HomeScreen />
           </div>
         </div>
