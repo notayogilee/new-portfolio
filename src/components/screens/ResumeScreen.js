@@ -1,9 +1,11 @@
 import React, { useContext } from 'react'
 import CircleNavContext from '../../context/circleNav/circleNavContext'
+import ScreenContext from '../../context/screen/screenContext'
 import { makeStyles } from '@material-ui/core/styles'
 import {
   Container,
   Typography,
+  Fade
 } from '@material-ui/core'
 
 const useStyles = makeStyles({
@@ -29,17 +31,22 @@ const useStyles = makeStyles({
 
 const ResumeScreen = () => {
   const circleNavContext = useContext(CircleNavContext)
+  const screenContext = useContext(ScreenContext)
+
   const classes = useStyles();
 
   const bodyId = circleNavContext.bodyId
+  const { resume } = screenContext
   return (
-    <div className={classes.root} id={bodyId}>
-      <Container className={classes.content}>
-        <Typography variant="h1">
-          Lee Castelani
+    <>
+      <Fade in={resume} timeout={500}>
+        <Container className={classes.content}>
+          <Typography variant="h1">
+            ResumeScreen
       </Typography>
-      </Container>
-    </div>
+        </Container>
+      </Fade>
+    </>
   )
 }
 

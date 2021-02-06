@@ -3,7 +3,6 @@ import CircleNavState from './context/circleNav/CircleNavState'
 import ScreenState from './context/screen/ScreenState'
 import UnderNav from './components/screens/UnderNav'
 import HomeScreen from './components/screens/HomeScreen'
-import ResumeScreen from './components/screens/ResumeScreen'
 import CircleNav from './components/utils/CircleNav'
 
 function App() {

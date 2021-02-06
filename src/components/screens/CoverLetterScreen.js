@@ -7,15 +7,11 @@ import {
   Typography,
   Fade
 } from '@material-ui/core'
-import ResumeScreen from '../screens/ResumeScreen'
-import CoverLetterScreen from '../screens/CoverLetterScreen'
-import ProjectsScreen from '../screens/ProjectsScreen'
 
 const useStyles = makeStyles({
   root: {
     minHeight: '100vh',
     height: '100%',
-    // width: 'auto',
     background: '#d68438',
     color: '#F1B24B',
     padding: '50px',
@@ -33,38 +29,25 @@ const useStyles = makeStyles({
   },
 })
 
-const HomeScreen = () => {
+const CoverLetterScreen = () => {
   const circleNavContext = useContext(CircleNavContext)
   const screenContext = useContext(ScreenContext)
 
   const classes = useStyles();
 
   const bodyId = circleNavContext.bodyId
-  const { home, resume, coverLetter, projects } = screenContext
-
+  const { coverLetter } = screenContext
   return (
-    <div className={classes.root} id={bodyId}>
-      {home &&
-        <Fade in={home} timeout={500}>
-          <Container className={classes.content}>
-            <Typography variant="h1">
-              Lee Castelani
+    <>
+      <Fade in={coverLetter} timeout={500}>
+        <Container className={classes.content}>
+          <Typography variant="h1">
+            Cover Letter Screen
       </Typography>
-          </Container>
-        </Fade>
-      }
-      {resume &&
-        <ResumeScreen />
-      }
-      {coverLetter &&
-        <CoverLetterScreen />
-      }
-      {projects &&
-        <ProjectsScreen />
-      }
-
-    </div>
+        </Container>
+      </Fade>
+    </>
   )
 }
 
-export default HomeScreen;
+export default CoverLetterScreen;

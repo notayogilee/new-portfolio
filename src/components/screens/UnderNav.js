@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import CircleNavContext from '../../context/circleNav/circleNavContext'
+import ScreenContext from '../../context/screen/screenContext'
 import {
   Typography,
   Slide,
@@ -8,8 +9,28 @@ import {
 
 const UnderNav = () => {
   const circleNavContext = useContext(CircleNavContext)
+  const screenContext = useContext(ScreenContext)
 
-  const open = circleNavContext.open
+  const { open, closeCircleNav } = circleNavContext
+
+  const { openHomeScreen, openResumeScreen, openCoverLetterScreen, openProjectsScreen } = screenContext
+
+  const openHome = async () => {
+    await openHomeScreen()
+    closeCircleNav()
+  }
+  const openResume = async () => {
+    await openResumeScreen()
+    closeCircleNav()
+  }
+  const openCoverLetter = () => {
+    openCoverLetterScreen()
+    closeCircleNav()
+  }
+  const openProjects = () => {
+    openProjectsScreen()
+    closeCircleNav()
+  }
 
   return (
     <div style={{
@@ -17,7 +38,8 @@ const UnderNav = () => {
       width: '100%',
       background: '#333',
       zIndex: 1,
-      overflowX: 'hidden'
+      overflowX: 'hidden',
+
     }}>
       <nav style={{
         display: 'flex',
@@ -30,19 +52,25 @@ const UnderNav = () => {
         paddingLeft: '30px'
       }}>
         <Slide in={open} direction="right" timeout={500}>
-          <Button>
+          <Button onClick={openHome}>
+            <Typography style={{ textTransform: 'uppercase', margin: '20px 0', color: '#fff' }}>Home</Typography>
+          </Button>
+
+        </Slide>
+        <Slide in={open} direction="right" timeout={500}>
+          <Button onClick={openResume}>
             <Typography style={{ textTransform: 'uppercase', margin: '20px 0', color: '#fff' }}>Resume</Typography>
           </Button>
 
         </Slide>
         <Slide in={open} direction="right" timeout={500}>
-          <Button>
+          <Button onClick={openCoverLetter}>
             <Typography style={{ textTransform: 'uppercase', margin: '20px 0', color: '#fff' }}>Cover Letter</Typography>
           </Button>
 
         </Slide>
         <Slide in={open} direction="right" timeout={500}>
-          <Button>
+          <Button onClick={openProjects}>
             <Typography style={{ textTransform: 'uppercase', margin: '20px 0', color: '#fff' }}>Projects</Typography>
           </Button>
 
