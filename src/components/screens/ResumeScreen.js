@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import CircleNavContext from '../../context/circleNav/circleNavContext'
 import ScreenContext from '../../context/screen/screenContext'
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles, createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import {
   Container,
   Fade
@@ -12,7 +12,18 @@ import Skills from '../sections/Skills'
 import Experience from '../sections/Experience'
 import Education from '../sections/Education'
 
-const useStyles = makeStyles({
+const theme = createMuiTheme({
+  typography: {
+    h3: {
+      fontSize: '1.8rem',
+      '@media (max-width: 600px)': {
+        fontSize: '1rem'
+      }
+    }
+  }
+})
+
+const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: '100vh',
     height: 'auto',
@@ -24,18 +35,18 @@ const useStyles = makeStyles({
     transition: 'transform 0.5s linear',
     zIndex: 100
   }
-})
+}))
 
 const ResumeScreen = () => {
   const circleNavContext = useContext(CircleNavContext)
   const screenContext = useContext(ScreenContext)
 
-  const classes = useStyles();
+  const classes = useStyles(theme);
 
   const bodyId = circleNavContext.bodyId
   const { resume } = screenContext
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Fade in={resume} timeout={500}>
         <Container>
           <Recommendations />
@@ -45,7 +56,7 @@ const ResumeScreen = () => {
           <Education /> */}
         </Container>
       </Fade>
-    </>
+    </ThemeProvider>
   )
 }
 
