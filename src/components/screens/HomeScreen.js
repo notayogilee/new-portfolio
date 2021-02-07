@@ -19,7 +19,7 @@ const useStyles = makeStyles({
     background: '#d68438',
     color: '#F1B24B',
     padding: '50px',
-    overflow: 'hidden',
+    overflowX: 'hidden',
     transformOrigin: 'top left',
     transition: 'transform 0.5s linear',
     zIndex: 90

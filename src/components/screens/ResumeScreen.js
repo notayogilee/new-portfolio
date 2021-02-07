@@ -4,14 +4,18 @@ import ScreenContext from '../../context/screen/screenContext'
 import { makeStyles } from '@material-ui/core/styles'
 import {
   Container,
-  Typography,
   Fade
 } from '@material-ui/core'
+import Recommendations from '../sections/Recomendations'
+import Summary from '../sections/Summary'
+import Skills from '../sections/Skills'
+import Experience from '../sections/Experience'
+import Education from '../sections/Education'
 
 const useStyles = makeStyles({
   root: {
     minHeight: '100vh',
-    height: '100%',
+    height: 'auto',
     background: '#d68438',
     color: '#F1B24B',
     padding: '50px',
@@ -19,14 +23,7 @@ const useStyles = makeStyles({
     transformOrigin: 'top left',
     transition: 'transform 0.5s linear',
     zIndex: 100
-  },
-  content: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    minHeight: '65vh',
-    height: 'auto'
-  },
+  }
 })
 
 const ResumeScreen = () => {
@@ -40,10 +37,12 @@ const ResumeScreen = () => {
   return (
     <>
       <Fade in={resume} timeout={500}>
-        <Container className={classes.content}>
-          <Typography variant="h1">
-            ResumeScreen
-      </Typography>
+        <Container>
+          <Recommendations />
+          <Summary />
+          {/* <Skills />
+          <Experience />
+          <Education /> */}
         </Container>
       </Fade>
     </>
