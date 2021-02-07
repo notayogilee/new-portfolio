@@ -20,11 +20,11 @@ const theme = createMuiTheme({
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: '80vh',
-    width: '100%'
+    height: '100vh',
+    width: '100%',
+    paddingBottom: '5rem'
   },
   container: {
-
     backgroundImage: `url(${laptop})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',

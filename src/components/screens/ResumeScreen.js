@@ -51,8 +51,8 @@ const ResumeScreen = () => {
         <Container>
           <Recommendations />
           <Summary />
-          {/* <Skills />
-          <Experience />
+          <Skills />
+          {/* <Experience />
           <Education /> */}
         </Container>
       </Fade>
