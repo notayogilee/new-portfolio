@@ -28,8 +28,9 @@ import materialUI from '../../images/logos/materialUI.png'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: '95vh',
+    height: '80vh',
     paddingBottom: '5rem',
+    overflow: 'hidden'
   },
   laptop: {
     height: '80vh',

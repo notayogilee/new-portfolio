@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import CircleNavContext from '../../context/circleNav/circleNavContext'
-import ScreenContext from '../../context/screen/screenContext'
 import ResumeContext from '../../context/resume/resumeContext'
 import Recommendations from '../sections/Recomendations'
 import Summary from '../sections/Summary'
@@ -11,7 +10,6 @@ import ResumeNav from '../utils/ResumeNav'
 
 const ResumeScreen = () => {
   const circleNavContext = useContext(CircleNavContext)
-  const screenContext = useContext(ScreenContext)
   const resumeContext = useContext(ResumeContext)
 
   const {
@@ -23,9 +21,8 @@ const ResumeScreen = () => {
   } = resumeContext
 
   const bodyId = circleNavContext.bodyId
-  const { resume } = screenContext
-  return (
 
+  return (
     <div>
       <ResumeNav />
       {recommendations &&

@@ -15,20 +15,28 @@ const UnderNav = () => {
 
   const { openHomeScreen, openResumeScreen, openCoverLetterScreen, openProjectsScreen } = screenContext
 
+  const noScroll = function () {
+    window.scrollTo(0, 0)
+  }
+
   const openHome = async () => {
     await openHomeScreen()
+    window.removeEventListener('scroll', noScroll)
     closeCircleNav()
   }
   const openResume = async () => {
     await openResumeScreen()
+    window.removeEventListener('scroll', noScroll)
     closeCircleNav()
   }
   const openCoverLetter = () => {
     openCoverLetterScreen()
+    window.removeEventListener('scroll', noScroll)
     closeCircleNav()
   }
   const openProjects = () => {
     openProjectsScreen()
+    window.removeEventListener('scroll', noScroll)
     closeCircleNav()
   }
 

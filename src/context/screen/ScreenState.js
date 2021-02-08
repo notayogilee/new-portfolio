@@ -19,32 +19,16 @@ const ScreenState = (props) => {
   const [state, dispatch] = useReducer(ScreenReducer, initialState)
 
   // Open Home Screen
-  const openHomeScreen = () => {
-    dispatch({
-      type: OPEN_HOME_SCREEN
-    })
-  }
+  const openHomeScreen = () => dispatch({ type: OPEN_HOME_SCREEN })
 
   // Open Resume Screen
-  const openResumeScreen = () => {
-    dispatch({
-      type: OPEN_RESUME_SCREEN
-    })
-  }
+  const openResumeScreen = () => dispatch({ type: OPEN_RESUME_SCREEN })
 
   // Open Cover Letter Screen
-  const openCoverLetterScreen = () => {
-    dispatch({
-      type: OPEN_COVER_LETTER_SCREEN
-    })
-  }
+  const openCoverLetterScreen = () => dispatch({ type: OPEN_COVER_LETTER_SCREEN })
 
   // Open Projects Screen
-  const openProjectsScreen = () => {
-    dispatch({
-      type: OPEN_PROJECTS_SCREEN
-    })
-  }
+  const openProjectsScreen = () => dispatch({ type: OPEN_PROJECTS_SCREEN })
 
   return <screenContext.Provider
     value={{

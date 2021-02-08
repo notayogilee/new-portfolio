@@ -21,29 +21,19 @@ const ResumeState = (props) => {
   const [state, dispatch] = useReducer(ResumeReducer, initialState)
 
   // Show recommendations section
-  const showRecommendationsSection = () => {
-    dispatch({ type: SHOW_RECOMMENDATIONS_SECTION })
-  }
+  const showRecommendationsSection = () => dispatch({ type: SHOW_RECOMMENDATIONS_SECTION })
 
   // Show summary section
-  const showSummarySection = () => {
-    dispatch({ type: SHOW_SUMMARY_SECTION })
-  }
+  const showSummarySection = () => dispatch({ type: SHOW_SUMMARY_SECTION })
 
   // Show skills section
-  const showSkillsSection = () => {
-    dispatch({ type: SHOW_SKILLS_SECTION })
-  }
+  const showSkillsSection = () => dispatch({ type: SHOW_SKILLS_SECTION })
 
   // Show education section
-  const showEducationSection = () => {
-    dispatch({ type: SHOW_EDUCATION_SECTION })
-  }
+  const showEducationSection = () => dispatch({ type: SHOW_EDUCATION_SECTION })
 
   // Show experience section
-  const showExperienceSection = () => {
-    dispatch({ type: SHOW_EXPERIENCE_SECTION })
-  }
+  const showExperienceSection = () => dispatch({ type: SHOW_EXPERIENCE_SECTION })
 
   return <resumeContext.Provider
     value={{

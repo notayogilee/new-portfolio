@@ -1,9 +1,7 @@
 import React, { useContext } from 'react'
-// import { Link, animateScroll as scroll } from 'react-scroll'
 import ResumeContext from '../../context/resume/resumeContext'
 import {
-  IconButton,
-  Typography
+  IconButton
 } from '@material-ui/core'
 import {
   ThumbUp,
@@ -26,7 +24,6 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     zIndex: 5,
   },
-
 }))
 
 const ResumeNav = () => {
