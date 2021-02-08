@@ -2,11 +2,6 @@ import React, { useContext } from 'react'
 import CircleNavContext from '../../context/circleNav/circleNavContext'
 import ScreenContext from '../../context/screen/screenContext'
 import { makeStyles } from '@material-ui/core/styles'
-import {
-  Container,
-  Typography,
-  Fade
-} from '@material-ui/core'
 import LandingScreen from './LandingScreen'
 import ResumeScreen from '../screens/ResumeScreen'
 import CoverLetterScreen from '../screens/CoverLetterScreen'
