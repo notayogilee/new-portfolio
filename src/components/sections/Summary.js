@@ -1,22 +1,11 @@
 import React from 'react'
-import { makeStyles, createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 import {
   Container,
   Typography,
   Paper
 } from '@material-ui/core'
 import laptop from '../../images/bootcamp.jpg'
-
-const theme = createMuiTheme({
-  typography: {
-    h3: {
-      fontSize: '1.8rem',
-      '@media (max-width: 600px)': {
-        fontSize: '1rem'
-      }
-    }
-  }
-})
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,19 +35,17 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const Summary = () => {
-  const classes = useStyles(theme)
+  const classes = useStyles()
   return (
     <div>
-      <ThemeProvider theme={theme}>
-        <Container className={classes.root} maxWidth="lg" disableGutters name="summary">
-          <Paper
-            className={classes.container}
-          >
-            <Typography variant="h3" className={classes.text}>Pharmacy tech turned full-stack web developer, eager to contribute to a team, sharpen & add new skills. I transformed my hobby for coding into a passion and took the leap to make it a career. I left my job with a partial scholarship from Lighthouse Labs to get the foundation I needed and am now excited about the new challenges awaiting.</Typography>
+      <Container className={classes.root} maxWidth="lg" disableGutters name="summary">
+        <Paper
+          className={classes.container}
+        >
+          <Typography variant="h3" className={classes.text}>Pharmacy tech turned full-stack web developer, eager to contribute to a team, sharpen & add new skills. I transformed my hobby for coding into a passion and took the leap to make it a career. I left my job with a partial scholarship from Lighthouse Labs to get the foundation I needed and am now excited about the new challenges awaiting.</Typography>
 
-          </Paper>
-        </Container>
-      </ThemeProvider>
+        </Paper>
+      </Container>
     </div>
   )
 }

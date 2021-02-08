@@ -1,14 +1,31 @@
 import React, { useContext } from 'react'
 import CircleNavContext from '../../context/circleNav/circleNavContext'
 import ScreenContext from '../../context/screen/screenContext'
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles, createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import LandingScreen from './LandingScreen'
 import ResumeScreen from '../screens/ResumeScreen'
 import CoverLetterScreen from '../screens/CoverLetterScreen'
 import ProjectsScreen from '../screens/ProjectsScreen'
 import ResumeNav from '../sections/ResumeNav'
 
-const useStyles = makeStyles({
+const theme = createMuiTheme({
+  typography: {
+    h1: {
+      fontSize: '5rem',
+      '@media (max-width: 600px)': {
+        fontSize: '2rem'
+      }
+    },
+    h3: {
+      fontSize: '1.8rem',
+      '@media (max-width: 600px)': {
+        fontSize: '1rem'
+      }
+    }
+  }
+})
+
+const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: '100vh',
     height: '100%',
@@ -21,7 +38,7 @@ const useStyles = makeStyles({
     transition: 'transform 0.5s linear',
     zIndex: 90,
   }
-})
+}))
 
 const HomeScreen = () => {
   const circleNavContext = useContext(CircleNavContext)
@@ -35,7 +52,7 @@ const HomeScreen = () => {
   const { home, resume, coverLetter, projects } = screenContext
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <div style={{ position: 'sticky', top: 0, zIndex: 5, background: 'rgba(0,0,0,0.3' }}>
         {resume && !circleNavOpen &&
           <ResumeNav />
@@ -55,7 +72,7 @@ const HomeScreen = () => {
           <ProjectsScreen />
         }
       </div>
-    </>
+    </ThemeProvider>
   )
 }
 
