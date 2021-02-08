@@ -1,5 +1,6 @@
-import React from 'react'
-import { Link, animateScroll as scroll } from 'react-scroll'
+import React, { useContext } from 'react'
+// import { Link, animateScroll as scroll } from 'react-scroll'
+import ResumeContext from '../../context/resume/resumeContext'
 import {
   IconButton,
   Typography
@@ -30,71 +31,57 @@ const useStyles = makeStyles((theme) => ({
 
 const ResumeNav = () => {
   const classes = useStyles()
+  const resumeContext = useContext(ResumeContext)
+
+  const {
+    showRecommendationsSection,
+    showSummarySection,
+    showSkillsSection,
+    showEducationSection,
+    showExperienceSection
+  } = resumeContext
+
+  const showRecommendations = () => {
+    showRecommendationsSection()
+  }
+
+  const showSummary = () => {
+    showSummarySection()
+  }
+
+  const showSkills = () => {
+    showSkillsSection()
+  }
+
+  const showEducation = () => {
+    showEducationSection()
+  }
+
+  const showExperience = () => {
+    showExperienceSection()
+  }
 
   return (
     <nav className={classes.root}>
-      <Link
-        activeClass="active"
-        to="recommendations"
-        spy={true}
-        smooth={true}
-        offset={-100}
-        duration={500}
-      >
-        <IconButton>
-          <ThumbUp fontSize="large" style={{ color: '#fff' }} />
-        </IconButton>
-      </Link>
+      <IconButton onClick={showRecommendations}>
+        <ThumbUp fontSize="large" style={{ color: '#fff' }} />
+      </IconButton>
 
-      <Link
-        activeClass="active"
-        to="summary"
-        spy={true}
-        smooth={true}
-        offset={-100}
-        duration={500}
-      >
-        <IconButton>
-          <MoreHoriz fontSize="large" style={{ color: '#fff' }} />
-        </IconButton>
-      </Link>
+      <IconButton onClick={showSummary}>
+        <MoreHoriz fontSize="large" style={{ color: '#fff' }} />
+      </IconButton>
 
-      <Link
-        activeClass="active"
-        to="skills"
-        spy={true}
-        offset={-100}
-        smooth={true}
-        duration={500}
-      >
-        <IconButton>
-          <Check fontSize="large" style={{ color: '#fff' }} />
-        </IconButton>
-      </Link>
+      <IconButton onClick={showSkills}>
+        <Check fontSize="large" style={{ color: '#fff' }} />
+      </IconButton>
 
-      <Link
-        activeClass="active"
-        to="education"
-        spy={true}
-        smooth={true}
-        duration={500}
-      >
-        <IconButton>
-          <AccountBalance fontSize="large" style={{ color: '#fff' }} />
-        </IconButton>
-      </Link>
+      <IconButton onClick={showEducation}>
+        <AccountBalance fontSize="large" style={{ color: '#fff' }} />
+      </IconButton>
 
-      <Link
-        activeClass="active"
-        to="experience"
-        spy={true}
-        smooth={true}
-        duration={500}
-      >
-        <IconButton>
-          <Work fontSize="large" style={{ color: '#fff' }} />
-        </IconButton>
-      </Link>
+      <IconButton onClick={showExperience}>
+        <Work fontSize="large" style={{ color: '#fff' }} />
+      </IconButton>
     </nav>
   )
 }

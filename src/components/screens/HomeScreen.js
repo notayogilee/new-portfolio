@@ -6,7 +6,7 @@ import LandingScreen from './LandingScreen'
 import ResumeScreen from '../screens/ResumeScreen'
 import CoverLetterScreen from '../screens/CoverLetterScreen'
 import ProjectsScreen from '../screens/ProjectsScreen'
-import ResumeNav from '../utils/ResumeNav'
+// import ResumeNav from '../utils/ResumeNav'
 
 const theme = createMuiTheme({
   typography: {
@@ -59,11 +59,11 @@ const HomeScreen = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <div style={{ position: 'sticky', top: 0, zIndex: 5, background: 'rgba(0,0,0,0.3' }}>
+      {/* <div style={{ position: 'sticky', top: 0, zIndex: 5, background: 'rgba(0,0,0,0.3' }}>
         {resume && !circleNavOpen &&
           <ResumeNav />
-        }
-      </div>
+        } */}
+      {/* </div> */}
       <div className={classes.root} id={bodyId}>
         {home &&
           <LandingScreen />
@@ -78,7 +78,7 @@ const HomeScreen = () => {
           <ProjectsScreen />
         }
       </div>
-    </ThemeProvider>
+    </ThemeProvider >
   )
 }
 
