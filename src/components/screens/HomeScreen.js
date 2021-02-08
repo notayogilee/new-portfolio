@@ -7,6 +7,7 @@ import {
   Typography,
   Fade
 } from '@material-ui/core'
+import LandingScreen from './LandingScreen'
 import ResumeScreen from '../screens/ResumeScreen'
 import CoverLetterScreen from '../screens/CoverLetterScreen'
 import ProjectsScreen from '../screens/ProjectsScreen'
@@ -24,17 +25,6 @@ const useStyles = makeStyles({
     transformOrigin: 'top left',
     transition: 'transform 0.5s linear',
     zIndex: 90,
-  },
-  content: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    minHeight: '65vh',
-    height: 'auto'
-  },
-  home: {
-    height: 'auto',
-    minHeight: '100vh'
   }
 })
 
@@ -45,24 +35,20 @@ const HomeScreen = () => {
   const classes = useStyles();
 
   const bodyId = circleNavContext.bodyId
+  const circleNavOpen = circleNavContext.open
+
   const { home, resume, coverLetter, projects } = screenContext
 
   return (
     <>
       <div style={{ position: 'sticky', top: 0, zIndex: 5, background: 'rgba(0,0,0,0.3' }}>
-        {resume &&
-
-          <ResumeNav />}
+        {resume && !circleNavOpen &&
+          <ResumeNav />
+        }
       </div>
       <div className={classes.root} id={bodyId}>
         {home &&
-          <Fade in={home} timeout={500}>
-            <Container className={classes.content}>
-              <Typography variant="h1">
-                Lee Castelani
-      </Typography>
-            </Container>
-          </Fade>
+          <LandingScreen />
         }
         {resume &&
           <ResumeScreen />

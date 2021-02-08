@@ -20,7 +20,7 @@ const theme = createMuiTheme({
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: '100vh',
+    height: '90vh',
     width: '100%',
     paddingBottom: '5rem'
   },

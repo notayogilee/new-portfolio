@@ -38,7 +38,7 @@ const ResumeNav = () => {
         to="recommendations"
         spy={true}
         smooth={true}
-        offset={-70}
+        // offset={10}
         duration={500}
       >
         <IconButton>
@@ -51,6 +51,7 @@ const ResumeNav = () => {
         to="summary"
         spy={true}
         smooth={true}
+        offset={-100}
         duration={500}
       >
         <IconButton>
@@ -62,6 +63,7 @@ const ResumeNav = () => {
         activeClass="active"
         to="skills"
         spy={true}
+        offset={-100}
         smooth={true}
         duration={500}
       >

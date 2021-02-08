@@ -45,6 +45,7 @@ const CircleNav = () => {
   const classes = useStyles();
 
   const handleOpen = () => {
+    window.scrollTo(0, 0)
     circleNavContext.openCircleNav()
   }
 

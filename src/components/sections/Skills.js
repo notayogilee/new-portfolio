@@ -31,13 +31,13 @@ import materialUI from '../../images/logos/materialUI.png'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: '100%',
-    minHeight: '100vh',
+    height: '80vh',
     width: '100%',
     position: 'relative',
     background: 'black',
     border: 'solid 50px black',
     borderRadius: '10px',
+    top: '50px'
   }
 }))
 
@@ -47,7 +47,7 @@ const Skills = () => {
   return (
     <div>
       <Container className={classes.root} disableGutters name="skills">
-        <Paper
+        <div
           style={{
             backgroundImage: `url(${html})`,
             backgroundSize: 'cover',
@@ -60,7 +60,7 @@ const Skills = () => {
             transform: 'rotate(15deg)'
           }}
         />
-        <Paper
+        <div
           style={{
             backgroundImage: `url(${css})`,
             backgroundSize: 'cover',
@@ -99,7 +99,7 @@ const Skills = () => {
             transform: 'rotate(-5deg)'
           }}
         />
-        <Paper
+        <div
           style={{
             backgroundImage: `url(${jQuery})`,
             backgroundSize: 'cover',
@@ -112,7 +112,7 @@ const Skills = () => {
             transform: 'rotate(-30deg)'
           }}
         />
-        <Paper
+        <div
           style={{
             backgroundImage: `url(${node})`,
             backgroundSize: 'cover',
@@ -150,20 +150,20 @@ const Skills = () => {
             transform: 'rotate(20deg)'
           }}
         />
-        <Paper
+        <div
           style={{
             backgroundImage: `url(${react})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             height: '120px',
-            width: '120px',
+            width: '135px',
             position: 'absolute',
             bottom: '20%',
             right: '10%',
             transform: 'rotate(-60deg)'
           }}
         />
-        <Paper
+        <div
           style={{
             backgroundImage: `url(${ruby})`,
             backgroundSize: 'cover',
@@ -176,7 +176,7 @@ const Skills = () => {
             transform: 'rotate(75deg)'
           }}
         />
-        <Paper
+        <div
           style={{
             backgroundImage: `url(${git})`,
             backgroundSize: 'cover',
@@ -228,12 +228,12 @@ const Skills = () => {
             transform: 'rotate(-45deg)'
           }}
         />
-        <Paper
+        <div
           style={{
             backgroundImage: `url(${jest})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            height: '80px',
+            height: '90px',
             width: '80px',
             position: 'absolute',
             bottom: '20%',
@@ -254,13 +254,13 @@ const Skills = () => {
             transform: 'rotate(-225deg)'
           }}
         />
-        <Paper
+        <div
           style={{
             backgroundImage: `url(${materialUI})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            height: '80px',
-            width: '80px',
+            height: '120px',
+            width: '120px',
             position: 'absolute',
             top: '50%',
             right: '30%',
