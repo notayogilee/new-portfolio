@@ -31,6 +31,10 @@ const useStyles = makeStyles({
     minHeight: '65vh',
     height: 'auto'
   },
+  home: {
+    height: 'auto',
+    minHeight: '100vh'
+  }
 })
 
 const HomeScreen = () => {
@@ -43,6 +47,7 @@ const HomeScreen = () => {
   const { home, resume, coverLetter, projects } = screenContext
 
   return (
+
     <div className={classes.root} id={bodyId}>
       {home &&
         <Fade in={home} timeout={500}>
@@ -62,7 +67,6 @@ const HomeScreen = () => {
       {projects &&
         <ProjectsScreen />
       }
-
     </div>
   )
 }
