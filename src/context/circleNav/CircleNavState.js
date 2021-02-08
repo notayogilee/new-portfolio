@@ -10,7 +10,7 @@ const CircleNavState = (props) => {
   const initialState = {
     open: false,
     bodyId: '',
-    navId: '',
+    navId: ''
   }
 
   const [state, dispatch] = useReducer(CircleNavReducer, initialState)

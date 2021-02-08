@@ -9,7 +9,7 @@ import laptop from '../../images/bootcamp.jpg'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: '90vh',
+    height: '92.5vh',
     width: '100%',
     paddingBottom: '5rem'
   },
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: `url(${laptop})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    height: '100%',
+    height: '80%',
     width: '100%',
     position: 'relative',
   },
@@ -39,6 +39,7 @@ const Summary = () => {
   return (
     <div>
       <Container className={classes.root} maxWidth="lg" disableGutters name="summary">
+        <Typography variant="h1">Summary</Typography>
         <Paper
           className={classes.container}
         >

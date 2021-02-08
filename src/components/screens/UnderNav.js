@@ -6,7 +6,6 @@ import {
   Slide,
   Button
 } from '@material-ui/core'
-import zIndex from '@material-ui/core/styles/zIndex'
 
 const UnderNav = () => {
   const circleNavContext = useContext(CircleNavContext)
@@ -38,9 +37,8 @@ const UnderNav = () => {
       height: '100vh',
       width: '100%',
       background: '#333',
-      // zIndex: 100,
       overflowX: 'hidden',
-
+      position: 'absolute'
     }}>
       <nav style={{
         display: 'flex',

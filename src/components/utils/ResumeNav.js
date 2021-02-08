@@ -38,7 +38,7 @@ const ResumeNav = () => {
         to="recommendations"
         spy={true}
         smooth={true}
-        // offset={10}
+        offset={-100}
         duration={500}
       >
         <IconButton>

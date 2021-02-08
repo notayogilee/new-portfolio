@@ -6,7 +6,7 @@ import LandingScreen from './LandingScreen'
 import ResumeScreen from '../screens/ResumeScreen'
 import CoverLetterScreen from '../screens/CoverLetterScreen'
 import ProjectsScreen from '../screens/ProjectsScreen'
-import ResumeNav from '../sections/ResumeNav'
+import ResumeNav from '../utils/ResumeNav'
 
 const theme = createMuiTheme({
   typography: {
@@ -20,6 +20,12 @@ const theme = createMuiTheme({
       fontSize: '1.8rem',
       '@media (max-width: 600px)': {
         fontSize: '1rem'
+      }
+    },
+    h6: {
+      fontSize: '1.2rem',
+      '@media (max-width: 600px)': {
+        fontSize: '0.9rem'
       }
     }
   }
