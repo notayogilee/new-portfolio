@@ -9,7 +9,7 @@ import {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: 'auto',
+    height: '100%',
     minHeight: '100vh',
     display: 'flex',
     flexGrow: 1,

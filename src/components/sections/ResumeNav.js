@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-evenly',
     position: 'sticky',
     margin: 'auto',
+    top: 0,
     zIndex: 5,
   },
 
@@ -41,7 +42,7 @@ const ResumeNav = () => {
         duration={500}
       >
         <IconButton>
-          <ThumbUp fontSize="large" />
+          <ThumbUp fontSize="large" style={{ color: '#fff' }} />
         </IconButton>
       </Link>
 
@@ -53,7 +54,7 @@ const ResumeNav = () => {
         duration={500}
       >
         <IconButton>
-          <MoreHoriz fontSize="large" />
+          <MoreHoriz fontSize="large" style={{ color: '#fff' }} />
         </IconButton>
       </Link>
 
@@ -65,7 +66,7 @@ const ResumeNav = () => {
         duration={500}
       >
         <IconButton>
-          <Check fontSize="large" />
+          <Check fontSize="large" style={{ color: '#fff' }} />
         </IconButton>
       </Link>
 
@@ -77,7 +78,7 @@ const ResumeNav = () => {
         duration={500}
       >
         <IconButton>
-          <AccountBalance fontSize="large" />
+          <AccountBalance fontSize="large" style={{ color: '#fff' }} />
         </IconButton>
       </Link>
 
@@ -89,7 +90,7 @@ const ResumeNav = () => {
         duration={500}
       >
         <IconButton>
-          <Work fontSize="large" />
+          <Work fontSize="large" style={{ color: '#fff' }} />
         </IconButton>
       </Link>
     </nav>

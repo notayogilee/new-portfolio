@@ -10,6 +10,7 @@ import {
 import ResumeScreen from '../screens/ResumeScreen'
 import CoverLetterScreen from '../screens/CoverLetterScreen'
 import ProjectsScreen from '../screens/ProjectsScreen'
+import ResumeNav from '../sections/ResumeNav'
 
 const useStyles = makeStyles({
   root: {
@@ -22,7 +23,7 @@ const useStyles = makeStyles({
     overflowX: 'hidden',
     transformOrigin: 'top left',
     transition: 'transform 0.5s linear',
-    zIndex: 90
+    zIndex: 90,
   },
   content: {
     display: 'flex',
@@ -47,27 +48,33 @@ const HomeScreen = () => {
   const { home, resume, coverLetter, projects } = screenContext
 
   return (
+    <>
+      <div style={{ position: 'sticky', top: 0, zIndex: 5, background: 'rgba(0,0,0,0.3' }}>
+        {resume &&
 
-    <div className={classes.root} id={bodyId}>
-      {home &&
-        <Fade in={home} timeout={500}>
-          <Container className={classes.content}>
-            <Typography variant="h1">
-              Lee Castelani
+          <ResumeNav />}
+      </div>
+      <div className={classes.root} id={bodyId}>
+        {home &&
+          <Fade in={home} timeout={500}>
+            <Container className={classes.content}>
+              <Typography variant="h1">
+                Lee Castelani
       </Typography>
-          </Container>
-        </Fade>
-      }
-      {resume &&
-        <ResumeScreen />
-      }
-      {coverLetter &&
-        <CoverLetterScreen />
-      }
-      {projects &&
-        <ProjectsScreen />
-      }
-    </div>
+            </Container>
+          </Fade>
+        }
+        {resume &&
+          <ResumeScreen />
+        }
+        {coverLetter &&
+          <CoverLetterScreen />
+        }
+        {projects &&
+          <ProjectsScreen />
+        }
+      </div>
+    </>
   )
 }
 

@@ -22,14 +22,13 @@ const ResumeScreen = () => {
   return (
 
     <div>
-      <ResumeNav />
+
       <Recommendations />
       <Summary />
       <Skills />
       <Experience />
       <Education />
     </div>
-
   )
 }
 
