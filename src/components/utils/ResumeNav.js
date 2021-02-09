@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import ResumeContext from '../../context/resume/resumeContext'
+import EducationContext from '../../context/education/educationContext'
 import {
   IconButton
 } from '@material-ui/core'
@@ -29,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
 const ResumeNav = () => {
   const classes = useStyles()
   const resumeContext = useContext(ResumeContext)
+  const educationContext = useContext(EducationContext)
 
   const {
     showRecommendationsSection,
@@ -37,6 +39,8 @@ const ResumeNav = () => {
     showEducationSection,
     showExperienceSection
   } = resumeContext
+
+  const { fetchEducationDetails, loading, education } = educationContext
 
   const showRecommendations = () => {
     showRecommendationsSection()
@@ -50,13 +54,17 @@ const ResumeNav = () => {
     showSkillsSection()
   }
 
-  const showEducation = () => {
+  const showEducation = async () => {
+    if (!sessionStorage.getItem('education')) {
+      await fetchEducationDetails()
+    }
     showEducationSection()
   }
 
   const showExperience = () => {
     showExperienceSection()
   }
+
 
   return (
     <nav className={classes.root}>

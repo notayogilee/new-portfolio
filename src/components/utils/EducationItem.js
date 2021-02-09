@@ -1,4 +1,6 @@
 import React from 'react'
+import imageUrlBuilder from '@sanity/image-url'
+import sanityClient from '../../client'
 import {
   Typography,
   Card,
@@ -7,6 +9,13 @@ import {
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import Link from '@material-ui/core/Link'
+
+// image builder tailored for the image in the response from sanity backend
+const builder = imageUrlBuilder(sanityClient)
+
+function urlFor(source) {
+  return builder.image(source)
+}
 
 const useStyles = makeStyles({
   root: {
@@ -23,7 +32,7 @@ const useStyles = makeStyles({
   }
 })
 
-const EducationItem = ({ name, fromDate, toDate, description, diploma, image, link }) => {
+const EducationItem = ({ schoolName, fromDate, toDate, description, course, diploma, image, link }) => {
   const classes = useStyles()
 
   return (
@@ -36,11 +45,17 @@ const EducationItem = ({ name, fromDate, toDate, description, diploma, image, li
       >
         <CardMedia
           className={classes.media}
-          image={image}
-          alt={name} />
+          image={`urlFor(${image})`}
+          alt={schoolName} />
         <CardContent>
           <Typography variant='h4'>
-            {name}
+            {schoolName}
+          </Typography>
+          <Typography
+            paragraph
+            variant='h6'
+          >
+            {course}
           </Typography>
           <Typography
             paragraph
