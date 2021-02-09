@@ -17,6 +17,10 @@ const CircleNavState = (props) => {
 
   // Open CircleNav
   const openCircleNav = () => {
+    // have screem scroll to top of page to maintain angle-open look
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+    // add hidden to overflow only on open to disable scroll
+    document.body.style.overflow = "hidden"
     dispatch({
       type: OPEN_CIRCLE_NAV,
       payload: {
@@ -28,6 +32,8 @@ const CircleNavState = (props) => {
 
   // Close CircleNav
   const closeCircleNav = () => {
+    // add scroll ability to view full pages
+    document.body.style.overflow = "scroll"
     dispatch({
       type: CLOSE_CIRCLE_NAV,
       payload: {
