@@ -47,6 +47,11 @@ export default {
       type: 'boolean'
     },
     {
+      name: 'diploma',
+      title: 'Diploma or Certificate Obtained',
+      type: 'string'
+    },
+    {
       name: 'fromDate',
       title: 'Start Date',
       type: 'datetime',
