@@ -34,6 +34,8 @@ const CircleNavState = (props) => {
   const closeCircleNav = () => {
     // add scroll ability to view full pages
     document.body.style.overflow = "scroll"
+    // still hide overflow x
+    document.body.style.overflowX = "hidden"
     dispatch({
       type: CLOSE_CIRCLE_NAV,
       payload: {

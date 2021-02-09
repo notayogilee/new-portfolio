@@ -19,7 +19,3 @@ body {
   width: '100%';
   background: #333;
 }
-
-#no-overflow {
-  overflow: 'hidden';
-}
