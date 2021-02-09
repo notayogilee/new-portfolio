@@ -12,7 +12,10 @@ const useStyles = makeStyles({
   root: {
     height: 'auto',
     width: '100%',
-    padding: '1rem'
+    padding: '1rem',
+    '@media (min-width: 600px)': {
+      minHeight: '700px',
+    }
   },
   media: {
     height: 0,
@@ -33,7 +36,8 @@ const EducationItem = ({ name, fromDate, toDate, description, diploma, image, li
       >
         <CardMedia
           className={classes.media}
-          image={image} />
+          image={image}
+          alt={name} />
         <CardContent>
           <Typography variant='h4'>
             {name}

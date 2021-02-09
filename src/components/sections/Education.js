@@ -7,6 +7,7 @@ import {
 } from '@material-ui/core'
 import EducationItem from '../utils/EducationItem'
 import diploma from '../../images/diploma.jpg'
+import college from '../../images/college.jpg'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,6 +39,7 @@ const Education = () => {
         </Grid>
         <Grid item xs={12} md={12} lg={5}>
           <EducationItem
+            image={college}
             name={'John Abbott College'}
             fromDate={'1998'}
             toDate={'2001'}
