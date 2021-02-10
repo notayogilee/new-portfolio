@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
+import BlockContent from '@sanity/block-content-to-react'
 import EducationContext from '../../context/education/educationContext'
-
+import moment from 'moment'
 import { makeStyles } from '@material-ui/core/styles'
 import {
   Container,
@@ -8,11 +9,6 @@ import {
   Grid
 } from '@material-ui/core'
 import EducationItem from '../utils/EducationItem'
-// import diploma from '../../images/diploma.jpg'
-// import college from '../../images/college.jpg'
-
-
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,6 +18,11 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: '5rem',
     overflow: 'hidden',
     margin: 'auto'
+  },
+  container: {
+    display: 'flex',
+    justifyContent: 'center',
+    padding: '1rem'
   }
 }))
 
@@ -31,48 +32,59 @@ const Education = () => {
 
   const { education, loading } = educationContext
 
+  const onlineEducation = education.filter((course) => course.isOnline)
+  const schoolEducation = education.filter((course) => !course.isOnline)
+
   return (
     <Container className={classes.root} maxWidth="lg" disableGutters name="education">
       {loading && 'Loading...'}
+
       <Typography variant="h1">Education</Typography>
-      <Grid container spacing={5} style={{ display: 'flex', justifyContent: 'center' }}>
-        {education.length > 0 && education.map((item) => {
+      <Grid container spacing={5} className={classes.container}>
+        {schoolEducation.length > 0 && schoolEducation.map((item) => {
           return (
-            <Grid item key={item._id} xs={12} md={12} lg={5}>
-              <EducationItem
-                image={item.mainImage.asset.url}
-                schoolName={item.school}
-                course={item.title}
-                fromDate={item.fromDate}
-                toDate={item.toDate}
-                // description={item.description[0].children[0].text}
-                diploma={item.diploma}
-                link={item.link}
-              />
-            </Grid>
+            <>
+              <Grid item key={item._id} xs={12} md={12} lg={5}>
+                <EducationItem
+                  image={item.mainImage.asset.url}
+                  schoolName={item.school}
+                  course={item.title}
+                  fromDate={item.fromDate ? moment(item.fromDate).format("DD MMM YYYY") : ""}
+                  toDate={item.toDate ? moment(item.toDate).format("DD MMM YYYY") : ""}
+                  // BlockContent is a package to facilitate the description content of sanity 
+                  // because styling and fonts, etc can be added via backend
+                  description={<BlockContent blocks={item.description} projectId="kd4r1s4u" dataset="production" />}
+                  diploma={item.diploma}
+                  link={item.link}
+                />
+              </Grid>
+            </>
           )
-        })
-
-        }
-
-        {/* <Grid item xs={12} md={12} lg={5}>
-          <EducationItem
-            image={college}
-            name={'John Abbott College'}
-            fromDate={'1998'}
-            toDate={'2001'}
-            description={'Natural Sciences'}
-            diploma={'diplôme d\'études collégiales'}
-            link={'http://www.johnabbott.qc.ca/'}
-          />
-        </Grid> */}
+        })}
       </Grid>
 
       <Typography variant="h1">Online Education</Typography>
-      <Grid container>
-        <Grid item item xs={12} md={12} lg={5}>
-
-        </Grid>
+      <Grid container spacing={5} className={classes.container}>
+        {onlineEducation.length > 0 && onlineEducation.map((item) => {
+          return (
+            <>
+              <Grid item key={item._id} xs={12} md={12} lg={5}>
+                <EducationItem
+                  image={item.mainImage.asset.url}
+                  schoolName={item.school}
+                  course={item.title}
+                  fromDate={item.fromDate ? moment(item.fromDate).format("DD MMM YYYY") : ""}
+                  toDate={item.toDate ? moment(item.toDate).format("DD MMM YYYY") : ""}
+                  // BlockContent is a package to facilitate the description content of sanity 
+                  // because styling and fonts, etc can be added via backend
+                  description={<BlockContent blocks={item.description} projectId="kd4r1s4u" dataset="production" />}
+                  diploma={item.diploma}
+                  link={item.link}
+                />
+              </Grid>
+            </>
+          )
+        })}
       </Grid>
     </Container>
   )

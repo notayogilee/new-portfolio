@@ -9,6 +9,7 @@ import {
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import Link from '@material-ui/core/Link'
+import inProgress from '../../images/inProgress.png'
 
 // image builder tailored for the image in the response from sanity backend
 const builder = imageUrlBuilder(sanityClient)
@@ -45,7 +46,9 @@ const EducationItem = ({ schoolName, fromDate, toDate, description, course, dipl
       >
         <CardMedia
           className={classes.media}
-          image={`urlFor(${image})`}
+          style={{
+            backgroundImage: `url(${image})`
+          }}
           alt={schoolName} />
         <CardContent>
           <Typography variant='h4'>
@@ -61,7 +64,15 @@ const EducationItem = ({ schoolName, fromDate, toDate, description, course, dipl
             paragraph
             variant='h6'
           >
-            {fromDate} - {toDate}
+            {fromDate ?
+              (
+                `${fromDate} - ${toDate}`
+              ) : toDate ? (
+                `Completed on ${toDate}`
+              ) : (
+                  ''
+                )
+            }
           </Typography>
           <Typography
             paragraph
