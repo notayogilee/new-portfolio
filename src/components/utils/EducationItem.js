@@ -55,13 +55,11 @@ const EducationItem = ({ schoolName, fromDate, toDate, description, course, dipl
             {schoolName}
           </Typography>
           <Typography
-            paragraph
             variant='h6'
           >
             {course}
           </Typography>
           <Typography
-            paragraph
             variant='h6'
           >
             {fromDate ?
@@ -75,7 +73,6 @@ const EducationItem = ({ schoolName, fromDate, toDate, description, course, dipl
             }
           </Typography>
           <Typography
-            paragraph
             variant='subtitle1'
             style={{ textAlign: 'justify' }}
           >
