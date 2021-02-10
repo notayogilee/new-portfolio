@@ -8,11 +8,11 @@ import {
 } from '../types'
 
 // look in session storage before fetching projects
-const projectFromSessionStorage = sessionStorage.getItem('projects') ? JSON.parse(sessionStorage.get('projects')) : []
+const projectsFromSessionStorage = sessionStorage.getItem('projects') ? JSON.parse(sessionStorage.get('projects')) : []
 
 const ProjectsState = (props) => {
   const initialState = {
-    projects: projectFromSessionStorage,
+    projects: projectsFromSessionStorage,
     loading: false
   }
 
@@ -20,27 +20,28 @@ const ProjectsState = (props) => {
 
   // Get project details
   const fetchProjectsDetails = async () => {
+
     dispatch({ type: SET_LOADING })
     console.log('projects request made')
 
     const res = await sanityClient.fetch(`*[_type == "projects"] {
-      _id,
-      title,
-      mainImage-> {
-        asset->{
-          _id,
-          url
-        }
-      },
-      isCompleted,
-      dateCompleted,
-      body,
-      gitHubLink,
-      deployedLink
-      "source": category->title,
-      "sourceDescription": category->description,
-      "sourceImage": category->image
-    }`)
+        _id,
+        title,
+        mainImage{
+          asset->{
+            _id,
+            url
+          },
+          alt
+        },
+        isCompleted,
+        dateCompleted,
+        body,
+        gitHubLink,
+        deployedLink
+      }`)
+
+    console.log(res)
 
     dispatch({
       type: GET_PROJECTS_DETAILS,
@@ -50,7 +51,6 @@ const ProjectsState = (props) => {
     // save res to session storage - if user comes back, don't need to fetch again
     sessionStorage.setItem('projects', JSON.stringify(res))
   }
-
 
   return <projectsContext.Provider
     value={{

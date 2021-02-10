@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import CircleNavContext from '../../context/circleNav/circleNavContext'
 import ScreenContext from '../../context/screen/screenContext'
+import ProjectsContext from '../../context/projects/projectsContext'
 import { makeStyles } from '@material-ui/core/styles'
 import {
   Container,
@@ -32,11 +33,14 @@ const useStyles = makeStyles({
 const ProjectsScreen = () => {
   const circleNavContext = useContext(CircleNavContext)
   const screenContext = useContext(ScreenContext)
+  const projectsContext = useContext(ProjectsContext)
 
   const classes = useStyles();
 
   const bodyId = circleNavContext.bodyId
   const { projects } = screenContext
+  const { projects: myProjects } = projectsContext
+
   return (
     <>
       <Fade in={projects} timeout={500}>

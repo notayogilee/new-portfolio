@@ -12,6 +12,7 @@ import {
   Work
 } from '@material-ui/icons'
 import { makeStyles } from '@material-ui/core/styles'
+import ProjectsState from '../../context/projects/ProjectsState'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,7 +41,7 @@ const ResumeNav = () => {
     showExperienceSection
   } = resumeContext
 
-  const { fetchEducationDetails, loading, education } = educationContext
+  const { fetchEducationDetails } = educationContext
 
   const showRecommendations = () => {
     showRecommendationsSection()

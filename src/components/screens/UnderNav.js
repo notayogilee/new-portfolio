@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import CircleNavContext from '../../context/circleNav/circleNavContext'
 import ScreenContext from '../../context/screen/screenContext'
+import ProjectsContext from '../../context/projects/projectsContext'
 import {
   Typography,
   Slide,
@@ -10,10 +11,11 @@ import {
 const UnderNav = () => {
   const circleNavContext = useContext(CircleNavContext)
   const screenContext = useContext(ScreenContext)
+  const projectsContext = useContext(ProjectsContext)
 
   const { open, closeCircleNav } = circleNavContext
-
   const { openHomeScreen, openResumeScreen, openCoverLetterScreen, openProjectsScreen } = screenContext
+  const { fetchProjectsDetails } = projectsContext
 
   const noScroll = function () {
     window.scrollTo(0, 0)
@@ -35,7 +37,11 @@ const UnderNav = () => {
     closeCircleNav()
   }
   const openProjects = () => {
+
     openProjectsScreen()
+    if (!sessionStorage.getItem('projects')) {
+      fetchProjectsDetails()
+    }
     window.removeEventListener('scroll', noScroll)
     closeCircleNav()
   }
