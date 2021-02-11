@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import ResumeContext from '../../context/resume/resumeContext'
 import { makeStyles } from '@material-ui/core/styles'
 import {
   Container,
   Typography,
-  Paper
+  Paper,
+  Slide
 } from '@material-ui/core'
 import laptop from '../../images/bootcamp.jpg'
 
@@ -36,16 +38,23 @@ const useStyles = makeStyles((theme) => ({
 
 const Summary = () => {
   const classes = useStyles()
+
+  const resumeContext = useContext(ResumeContext)
+  const { summary } = resumeContext
   return (
     <div>
-      <Container className={classes.root} maxWidth="lg" disableGutters name="summary">
-        <Typography variant="h1">Summary</Typography>
-        <Paper
-          className={classes.container}
-        >
-          <Typography variant="h3" className={classes.text}>Pharmacy tech turned full-stack web developer, eager to contribute to a team, sharpen & add new skills. I transformed my hobby for coding into a passion and took the leap to make it a career. I left my job with a partial scholarship from Lighthouse Labs to get the foundation I needed and am now excited about the new challenges awaiting.</Typography>
+      <Container className={classes.root} maxWidth="lg" disableGutters >
+        <Slide in={summary} direction="left" timeout={250}>
+          <Typography variant="h1">Summary</Typography>
+        </Slide>
+        <Slide in={summary} direction="right" timeout={250}>
+          <Paper
+            className={classes.container}
+          >
+            <Typography variant="h3" className={classes.text}>Pharmacy tech turned full-stack web developer, eager to contribute to a team, sharpen & add new skills. I transformed my hobby for coding into a passion and took the leap to make it a career. I left my job with a partial scholarship from Lighthouse Labs to get the foundation I needed and am now excited about the new challenges awaiting.</Typography>
 
-        </Paper>
+          </Paper>
+        </Slide>
       </Container>
     </div>
   )

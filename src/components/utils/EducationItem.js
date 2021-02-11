@@ -25,10 +25,22 @@ const theme = createMuiTheme({
     }
   },
   typography: {
+    h3: {
+      fontSize: '2.2rem',
+      '@media (max-width: 700px)': {
+        fontSize: '1.4rem'
+      },
+    },
     h4: {
       fontSize: '1.8rem',
       '@media (max-width: 600px)': {
         fontSize: '1.2rem'
+      }
+    },
+    h5: {
+      fontSize: '1.6rem',
+      '@media (max-width: 600px)': {
+        fontSize: '1.1rem'
       }
     },
     h6: {
@@ -72,12 +84,12 @@ const EducationItem = ({ schoolName, fromDate, toDate, description, course, dipl
             className={classes.media}
             style={{
               backgroundImage: `url(${image})`,
-              borderRadius: "5px"
+              // borderRadius: "5px"
             }}
             alt={schoolName} />
           <CardContent>
             <Typography
-              variant='h4'
+              variant='h3'
               color='secondary'
             >
               {course}
@@ -106,7 +118,7 @@ const EducationItem = ({ schoolName, fromDate, toDate, description, course, dipl
               }
             </Typography>
             <Typography
-              variant='subtitle1'
+              variant='h5'
               color='secondary'
               style={{ textAlign: 'justify', marginTop: '0.5rem' }}
             >

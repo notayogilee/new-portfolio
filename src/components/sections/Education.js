@@ -27,9 +27,7 @@ const useStyles = makeStyles((theme) => ({
     padding: '1rem'
   },
   title: {
-    margin: '4rem 0 1rem 0',
-    textAlign: 'center'
-
+    margin: '4rem 0 1rem 0'
   }
 }))
 

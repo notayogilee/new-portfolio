@@ -3,7 +3,7 @@ import Particles from 'react-tsparticles'
 
 const particles = () => {
   return (
-    <div style={{ height: '100%', width: '2000px', transform: 'translateX(0%)' }}>
+    <div style={{ height: '100%', width: '2100px', transform: 'translateX(-10%)' }}>
       <Particles
         id="tsparticles"
         options={{

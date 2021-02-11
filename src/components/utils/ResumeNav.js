@@ -12,7 +12,6 @@ import {
   Work
 } from '@material-ui/icons'
 import { makeStyles } from '@material-ui/core/styles'
-// import ProjectsState from '../../context/projects/ProjectsState'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
     top: 0,
     zIndex: 5,
+    color: '#333'
   },
 }))
 
@@ -70,23 +70,23 @@ const ResumeNav = () => {
   return (
     <nav className={classes.root}>
       <IconButton onClick={showRecommendations}>
-        <ThumbUp fontSize="large" style={{ color: '#fff' }} />
+        <ThumbUp fontSize="large" style={{ color: '#333' }} />
       </IconButton>
 
       <IconButton onClick={showSummary}>
-        <MoreHoriz fontSize="large" style={{ color: '#fff' }} />
+        <MoreHoriz fontSize="large" style={{ color: '#333' }} />
       </IconButton>
 
       <IconButton onClick={showSkills}>
-        <Check fontSize="large" style={{ color: '#fff' }} />
+        <Check fontSize="large" style={{ color: '#333' }} />
       </IconButton>
 
       <IconButton onClick={showEducation}>
-        <AccountBalance fontSize="large" style={{ color: '#fff' }} />
+        <AccountBalance fontSize="large" style={{ color: '#333' }} />
       </IconButton>
 
       <IconButton onClick={showExperience}>
-        <Work fontSize="large" style={{ color: '#fff' }} />
+        <Work fontSize="large" style={{ color: '#333' }} />
       </IconButton>
     </nav>
   )

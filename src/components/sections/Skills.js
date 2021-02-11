@@ -1,7 +1,37 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import { Typography } from '@material-ui/core'
+import React, { useContext } from 'react'
+import ResumeContext from '../../context/resume/resumeContext'
+import { makeStyles, createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
+import { Typography, Slide } from '@material-ui/core'
 import laptop from '../../images/laptopSkills.jpg'
+
+const theme = createMuiTheme({
+  typography: {
+    h2: {
+      fontSize: '3rem',
+      '@media (max-width: 700px)': {
+        fontSize: '1.8rem'
+      }
+    },
+    h3: {
+      fontSize: '2.2rem',
+      '@media (max-width: 700px)': {
+        fontSize: '1.4rem'
+      }
+    },
+    h4: {
+      fontSize: '1.8rem',
+      '@media (max-width: 700px)': {
+        fontSize: '1.2rem'
+      }
+    },
+    h6: {
+      fontSize: '1.2rem',
+      '@media (max-width: 700px)': {
+        fontSize: '1rem'
+      }
+    }
+  }
+})
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,28 +63,38 @@ const useStyles = makeStyles((theme) => ({
 
 const Skills = () => {
   const classes = useStyles()
+
+  const resumeContext = useContext(ResumeContext)
+  const { skills } = resumeContext
+
   return (
-    <div className={classes.root}>
-      <Typography component="div" variant="h1">Skills</Typography>
-      <div className={classes.container}>
-        <div className={classes.text}>
+    <ThemeProvider theme={theme}>
+      <div className={classes.root}>
+        <Slide in={skills} direction="left" timeout={250}>
+          <Typography component="div" variant="h1">Skills</Typography>
+        </Slide>
+        <Slide in={skills} direction="right" timeout={250}>
+          <div className={classes.container}>
+            <div className={classes.text}>
 
-          <Typography variant="h2">Languages: </Typography>
-          <Typography variant="h3">
-            HTML, CSS, javaScript, SQL, Ruby
-</Typography>
+              <Typography variant="h2">Languages: </Typography>
+              <Typography variant="h3">
+                HTML, CSS, javaScript, SQL, Ruby
+          </Typography>
 
-          <Typography variant="h2">Frameworks & Libraries: </Typography>
-          <Typography variant="h3">
-            ReactJS, NodeJS, Express, Rails, jQuery,Material-UI, Bootstrap, Jest, Cypress, Mocha, Chai
-</Typography>
-          <Typography variant="h2">Databases: </Typography>
-          <Typography variant="h3">
-            postgreSQL, MongoDB, Sanity
-  </Typography>
-        </div>
+              <Typography variant="h2">Frameworks & Libraries: </Typography>
+              <Typography variant="h3">
+                ReactJS, NodeJS, Express, Rails, jQuery,Material-UI, Bootstrap, Jest, Cypress, Mocha, Chai
+          </Typography>
+              <Typography variant="h2">Databases: </Typography>
+              <Typography variant="h3">
+                postgreSQL, MongoDB, Sanity
+          </Typography>
+            </div>
+          </div>
+        </Slide>
       </div>
-    </div>
+    </ThemeProvider>
   )
 }
 

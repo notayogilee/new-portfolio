@@ -1,53 +1,72 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import ResumeContext from '../../context/resume/resumeContext'
 import { makeStyles } from '@material-ui/core/styles'
 import {
   Container,
   Typography,
-  Paper
+  Slide
 } from '@material-ui/core'
-import laptop from '../../images/bootcamp.jpg'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     height: '92.5vh',
     width: '100%',
-    paddingBottom: '5rem'
+    paddingBottom: '5rem',
+    display: 'flex',
+    flexDirection: 'column',
+    margin: '2rem 0 4rem 0'
   },
-  // container: {
-  //   backgroundImage: `url(${laptop})`,
-  //   backgroundSize: 'cover',
-  //   backgroundPosition: 'center',
-  //   height: '80%',
-  //   width: '100%',
-  //   position: 'relative',
-  // },
-  // text: {
-  //   position: 'absolute',
-  //   height: '100%',
-  //   width: '100%',
-  //   padding: '2rem',
-  //   textAlign: 'justify',
-  //   backgroundColor: 'rgba(0,0,0,0.5)',
-  //   color: '#fff',
-  //   display: 'flex',
-  //   alignItems: 'center'
-  // }
+  container: {
+    height: 'auto',
+    color: '#333',
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    margin: '2rem 0 4rem 0',
+    padding: '2rem',
+    '@media (max-width: 700px)': {
+      padding: 0
+    }
+  },
 }))
 
 const Experience = () => {
   const classes = useStyles()
+
+  const resumeContext = useContext(ResumeContext)
+  const { experience } = resumeContext
+
   return (
-    <div>
-      <Container className={classes.root} maxWidth="lg" disableGutters name="experience">
-        <Typography variant="h1">Experience</Typography>
-        <Paper
+    <Container className={classes.root} maxWidth="lg" disableGutters>
+      <Slide in={experience} direction="left" timeout={250}>
+        <Typography variant="h1">Employment</Typography>
+      </Slide>
+      <Slide in={experience} direction="right" timeout={250}>
+        <div
           className={classes.container}
         >
-
-
-        </Paper>
-      </Container>
-    </div>
+          <Typography
+            variant="h3"
+            paragraph
+          >
+            McGill University Health Center
+        </Typography>
+          <Typography
+            paragraph
+            variant="h6">
+            2008-2020
+        </Typography>
+          <Typography
+            variant="h6">
+            Worked in various departments: main pharmacy, I.C.U., O.R., and oncology.
+            Specializing in oncology, part of a team that processed and prepared medications and chemotherapy.
+            Adapted to constantly changing protocols, norms and procedures.
+            Involved in relocating and setting up pharmacy in new hospital.
+        </Typography>
+        </div>
+      </Slide>
+    </Container>
   )
 }
 

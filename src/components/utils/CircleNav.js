@@ -30,12 +30,14 @@ const useStyles = makeStyles({
   },
   openButton: {
     position: 'absolute',
-    left: '70%'
+    left: '70%',
+    color: '#d68438'
   },
   closeButton: {
     position: 'absolute',
     top: '50%',
-    left: '-180%'
+    left: '-180%',
+    color: '#d68438'
   }
 })
 
