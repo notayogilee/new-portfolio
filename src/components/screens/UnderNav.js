@@ -53,7 +53,8 @@ const UnderNav = () => {
       width: '100%',
       background: 'transparent',
       overflowX: 'hidden',
-      position: 'absolute'
+      position: 'absolute',
+
     }}>
       <Particles />
       <nav style={{
@@ -92,7 +93,6 @@ const UnderNav = () => {
 
         </Slide>
       </nav>
-
     </div>
   )
 }

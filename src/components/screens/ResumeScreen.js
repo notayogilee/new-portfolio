@@ -32,6 +32,7 @@ const ResumeScreen = () => {
         <Summary />
       }
       {skills &&
+
         <Skills />
       }
       {education &&

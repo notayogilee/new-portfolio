@@ -10,6 +10,7 @@ import {
 } from '@material-ui/core'
 import EducationItem from '../utils/EducationItem'
 import TopButton from '../utils/TopButton'
+import Particles from '../utils/particles'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,7 +44,7 @@ const Education = () => {
 
   return (
     <Container className={classes.root} maxWidth="lg" disableGutters name="education">
-      {loading && 'Loading...'}
+      {loading && <Particles />}
 
       <Typography
         variant="h1"
@@ -93,7 +94,7 @@ const Education = () => {
                 toDate={item.toDate ? moment(item.toDate).format("MMM YYYY") : ""}
                 // BlockContent is a package to facilitate the description content of sanity 
                 // because styling and fonts, etc can be added via backend
-                description={<BlockContent blocks={item.description} projectId="kd4r1s4u" dataset="production" />}
+                description={item.description ? <BlockContent blocks={item.description} projectId="kd4r1s4u" dataset="production" /> : ""}
                 diploma={item.diploma}
                 link={item.link}
               />
