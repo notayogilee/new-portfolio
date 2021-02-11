@@ -15,7 +15,7 @@ function App() {
         <ResumeState>
           <EducationState>
             <ProjectsState>
-              <div style={{ position: 'relative' }}>
+              <div style={{ position: 'relative', top: 0, left: 0, bottom: 0, right: 0 }}>
                 <div style={{ position: 'fixed', zIndex: 200 }}>
                   <CircleNav />
                 </div>

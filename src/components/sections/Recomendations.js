@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     alignItems: 'center',
     paddingBottom: '5rem',
-    top: 0
+
   },
   item: {
     height: '600px',
@@ -56,7 +56,15 @@ const Recomendations = () => {
   return (
     <div >
       <Container>
-        <Typography variant="h1">Recomendations</Typography>
+        <Typography
+          variant="h1"
+          style={{
+            textAlign: 'center',
+            margin: '3rem 0 1rem 0'
+          }}
+        >
+          Recomendations
+        </Typography>
       </Container>
       <Container className={classes.root} disableGutters name="recommendations" id="recommendations">
         <Grid container spacing={4} >

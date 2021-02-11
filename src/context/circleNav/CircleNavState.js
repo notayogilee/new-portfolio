@@ -18,7 +18,7 @@ const CircleNavState = (props) => {
   // Open CircleNav
   const openCircleNav = () => {
     // have screem scroll to top of page to maintain angle-open look
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, left: 0 })
     // add hidden to overflow only on open to disable scroll
     document.body.style.overflow = "hidden"
     dispatch({

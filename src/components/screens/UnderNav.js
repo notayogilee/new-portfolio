@@ -7,6 +7,7 @@ import {
   Slide,
   Button
 } from '@material-ui/core'
+import Particles from '../utils/particles'
 
 const UnderNav = () => {
   const circleNavContext = useContext(CircleNavContext)
@@ -50,10 +51,11 @@ const UnderNav = () => {
     <div style={{
       height: '100vh',
       width: '100%',
-      background: '#333',
+      background: 'transparent',
       overflowX: 'hidden',
       position: 'absolute'
     }}>
+      <Particles />
       <nav style={{
         display: 'flex',
         flexDirection: 'column',
@@ -90,6 +92,7 @@ const UnderNav = () => {
 
         </Slide>
       </nav>
+
     </div>
   )
 }

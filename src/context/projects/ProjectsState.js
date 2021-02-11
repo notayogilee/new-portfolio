@@ -8,7 +8,7 @@ import {
 } from '../types'
 
 // look in session storage before fetching projects
-const projectsFromSessionStorage = sessionStorage.getItem('projects') ? JSON.parse(sessionStorage.get('projects')) : []
+const projectsFromSessionStorage = sessionStorage.getItem('projects') ? JSON.parse(sessionStorage.getItem('projects')) : []
 
 const ProjectsState = (props) => {
   const initialState = {

@@ -12,7 +12,7 @@ import {
   Work
 } from '@material-ui/icons'
 import { makeStyles } from '@material-ui/core/styles'
-import ProjectsState from '../../context/projects/ProjectsState'
+// import ProjectsState from '../../context/projects/ProjectsState'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     height: '8vh',
     width: '60vw',
     alignItems: 'center',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-between',
     position: 'sticky',
     margin: 'auto',
     top: 0,

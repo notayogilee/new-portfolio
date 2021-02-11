@@ -59,11 +59,6 @@ const HomeScreen = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      {/* <div style={{ position: 'sticky', top: 0, zIndex: 5, background: 'rgba(0,0,0,0.3' }}>
-        {resume && !circleNavOpen &&
-          <ResumeNav />
-        } */}
-      {/* </div> */}
       <div className={classes.root} id={bodyId}>
         {home &&
           <LandingScreen />
@@ -78,7 +73,7 @@ const HomeScreen = () => {
           <ProjectsScreen />
         }
       </div>
-    </ThemeProvider >
+    </ThemeProvider>
   )
 }
 
