@@ -7,9 +7,9 @@ const TopButton = () => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
   }
   return (
-    <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-      <Fab>
-        <Navigation onClick={topOfScreen} />
+    <div style={{ display: 'flex', justifyContent: 'flex-end', }}>
+      <Fab style={{ background: '#333' }}>
+        <Navigation onClick={topOfScreen} style={{ color: '#d68438' }} />
       </Fab>
     </div>
   )

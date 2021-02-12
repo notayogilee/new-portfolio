@@ -26,20 +26,20 @@ const ResumeScreen = () => {
     <div>
       <ResumeNav />
       {recommendations &&
-        <Recommendations />
+        <Recommendations recommendations={recommendations} />
       }
       {summary &&
-        <Summary />
+        <Summary summary={summary} />
       }
       {skills &&
 
-        <Skills />
+        <Skills skills={skills} />
       }
       {education &&
         <Education />
       }
       {experience &&
-        <Experience />
+        <Experience experience={experience} />
       }
     </div>
   )

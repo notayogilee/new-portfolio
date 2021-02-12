@@ -1,5 +1,4 @@
-import React, { useContext } from 'react'
-import ResumeContext from '../../context/resume/resumeContext'
+import React from 'react'
 import { makeStyles, createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import { Typography, Slide } from '@material-ui/core'
 import laptop from '../../images/laptopSkills.jpg'
@@ -46,7 +45,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundRepeat: 'no-repeat',
     height: '80%',
     width: '100%',
-    position: 'relative'
+    position: 'relative',
+    borderRadius: '15px'
   },
   text: {
     height: '100%',
@@ -57,15 +57,13 @@ const useStyles = makeStyles((theme) => ({
     color: '#fff',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    borderRadius: '15px'
   }
 }))
 
-const Skills = () => {
+const Skills = ({ skills }) => {
   const classes = useStyles()
-
-  const resumeContext = useContext(ResumeContext)
-  const { skills } = resumeContext
 
   return (
     <ThemeProvider theme={theme}>

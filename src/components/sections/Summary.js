@@ -1,5 +1,4 @@
-import React, { useContext } from 'react'
-import ResumeContext from '../../context/resume/resumeContext'
+import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import {
   Container,
@@ -36,11 +35,9 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const Summary = () => {
+const Summary = ({ summary }) => {
   const classes = useStyles()
 
-  const resumeContext = useContext(ResumeContext)
-  const { summary } = resumeContext
   return (
     <div>
       <Container className={classes.root} maxWidth="lg" disableGutters >

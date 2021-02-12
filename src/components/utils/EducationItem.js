@@ -21,7 +21,7 @@ function urlFor(source) {
 const theme = createMuiTheme({
   palette: {
     secondary: {
-      main: '#fff'
+      main: '#333'
     }
   },
   typography: {
@@ -84,7 +84,7 @@ const EducationItem = ({ schoolName, fromDate, toDate, description, course, dipl
             className={classes.media}
             style={{
               backgroundImage: `url(${image})`,
-              // borderRadius: "5px"
+              borderRadius: '15px'
             }}
             alt={schoolName} />
           <CardContent>

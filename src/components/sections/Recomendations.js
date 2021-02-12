@@ -1,5 +1,4 @@
-import React, { useContext } from 'react'
-import ResumeContext from '../../context/resume/resumeContext'
+import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import {
   Container,
@@ -25,7 +24,10 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     padding: '1rem 1rem 0 1rem',
-    color: '#333'
+    color: '#333',
+    '@media (max-width: 600px)': {
+      padding: 0
+    }
   },
   footer: {
     width: '100%',
@@ -36,11 +38,8 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const Recomendations = () => {
+const Recomendations = ({ recommendations }) => {
   const classes = useStyles()
-
-  const resumeContext = useContext(ResumeContext)
-  const { recommendations } = resumeContext
 
   return (
     <>
@@ -57,7 +56,7 @@ const Recomendations = () => {
         </Slide>
       </Container>
       <Container className={classes.root} disableGutters>
-        <Grid container spacing={4} >
+        <Grid container spacing={4} style={{ margin: 'auto' }} >
           <Slide direction="right" in={recommendations} timeout={250}>
             <Grid item className={classes.item} xs={12} sm={10} md={6} lg={4}>
               <div className={classes.paper} elevation={5}>
