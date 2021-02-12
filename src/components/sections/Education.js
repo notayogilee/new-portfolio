@@ -41,7 +41,7 @@ const Education = () => {
   const schoolEducation = education.filter((course) => !course.isOnline)
 
   return (
-    <Container className={classes.root} maxWidth="lg" disableGutters name="education">
+    <Container className={classes.root} maxWidth="lg" disableGutters>
       {loading && <Particles />}
 
       <Typography
