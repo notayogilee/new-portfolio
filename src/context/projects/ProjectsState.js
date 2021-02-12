@@ -38,10 +38,10 @@ const ProjectsState = (props) => {
         dateCompleted,
         body,
         gitHubLink,
-        deployedLink
+        deployedLink,
+        "type": category->title,
+        "typeImage": category->image
       }`)
-
-    console.log(res)
 
     dispatch({
       type: GET_PROJECTS_DETAILS,
