@@ -22,6 +22,11 @@ import {
 } from '@material-ui/icons'
 
 const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#333'
+    }
+  },
   typography: {
     h1: {
       fontSize: '5rem',
@@ -45,7 +50,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     minHeight: '90vh',
-    height: 'auto'
+    height: 'auto',
+
   },
   header: {
     display: 'flex',
@@ -64,12 +70,9 @@ const useStyles = makeStyles((theme) => ({
   modal: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   form: {
-    backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
-    boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
   message: {
@@ -78,8 +81,9 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     height: '50%',
-    width: '100%'
-  },
+    width: '100%',
+    outline: 'none'
+  }
 }))
 
 const LandingScreen = () => {
@@ -112,7 +116,6 @@ const LandingScreen = () => {
           </Typography>
         </div>
 
-
         <Container className={classes.icons}>
           <Hidden xsDown>
             <IconButton onClick={handleOpen}>
@@ -131,8 +134,7 @@ const LandingScreen = () => {
         </Typography>
 
         <Modal
-          aria-labelledby="transition-modal-title"
-          aria-describedby="transition-modal-description"
+          aria-labelledby="email-modal"
           className={classes.modal}
           open={open}
           onClose={handleClose}
@@ -144,29 +146,40 @@ const LandingScreen = () => {
         >
           <Fade in={open}>
             <Container maxWidth="md" className={classes.message}>
-              <Paper style={{ padding: '1rem' }} elevation={5}>
-
-                <form autoComplete="off">
+              <Paper style={{ padding: '1rem', textAlign: 'center' }}>
+                <Typography variant="h4" id="email-modal">
+                  Send me a message
+                </Typography>
+                <form
+                  name="contact"
+                  method="post"
+                  data-netlify="true"
+                  action="/contact/success"
+                  autoComplete="off"
+                  className={classes.form}
+                >
                   <FormControl fullWidth={true} style={{ marginBottom: '0.25rem' }}>
                     <InputLabel htmlFor="name">Name</InputLabel>
-                    <Input id="name" value={name} onChange={(e) => setName(e.target.value)} />
+                    <Input id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} />
                   </FormControl>
                   <FormControl fullWidth={true} style={{ marginBottom: '0.25rem' }}>
                     <InputLabel htmlFor="email">Email</InputLabel>
-                    <Input id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <Input id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                   </FormControl>
                   <FormControl fullWidth={true} style={{ marginBottom: '0.25rem' }}>
                     <InputLabel htmlFor="subject">Subject</InputLabel>
-                    <Input id="subject" value={subject} onChange={(e) => setSubject(e.target.value)} />
+                    <Input id="subject" name="subject" value={subject} onChange={(e) => setSubject(e.target.value)} />
                   </FormControl>
                   <FormControl fullWidth={true} style={{ marginBottom: '0.5rem' }}>
                     <TextField
+                      name="message"
                       id="message"
                       multiline
-                      label="message"
+                      label="Message"
                       style={{
                         resize: "none",
-                        marginBottom: '0.25rem'
+                        marginBottom: '0.25rem',
+                        color: '#333'
                       }}
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
@@ -174,12 +187,11 @@ const LandingScreen = () => {
                   </FormControl>
                   <Button
                     type="submit"
-                    style={{ display: 'block', margin: 'auto' }}
+                    style={{ display: 'block', margin: 'auto', background: '#d68438' }}
                     variant="contained"
-                    color="primary"
                   >
                     <Typography
-                      color='secondary'
+                      style={{ color: '#333' }}
 
                     > Send</Typography>
                   </Button>
