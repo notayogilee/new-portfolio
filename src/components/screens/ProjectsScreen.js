@@ -41,6 +41,8 @@ const ProjectsScreen = () => {
   const { projects } = screenContext
   const { projects: myProjects } = projectsContext
 
+  // const personalProjects = 
+
   return (
     <>
       <Fade in={projects} timeout={500}>
