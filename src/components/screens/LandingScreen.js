@@ -158,6 +158,7 @@ const LandingScreen = () => {
                   autoComplete="off"
                   className={classes.form}
                 >
+                  <input type="hidden" name="form-name" value="contact" />
                   <FormControl fullWidth={true} style={{ marginBottom: '0.25rem' }}>
                     <InputLabel htmlFor="name">Name</InputLabel>
                     <Input id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} />
