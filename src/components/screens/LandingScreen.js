@@ -12,6 +12,7 @@ import {
   Input,
   Modal,
   Backdrop,
+  Slide,
   Fade,
   Hidden
 } from '@material-ui/core'
@@ -86,7 +87,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const LandingScreen = () => {
+const LandingScreen = ({ home }) => {
   const classes = useStyles()
 
   const [open, setOpen] = useState(false)
@@ -107,32 +108,41 @@ const LandingScreen = () => {
   return (
     <ThemeProvider theme={theme}>
       <Container className={classes.content}>
-        <div className={classes.header}>
-          <Typography variant="h1">
-            Lee Castelani
+        <Slide in={home} timeout={250} direction="left">
+          <div className={classes.header}>
+            <Typography variant="h1">
+              Lee Castelani
         </Typography>
-          <Typography variant="h5">
-            Fresh Junior Full Stack Developer
+            <Typography variant="h5">
+              Fresh Junior Full Stack Developer
           </Typography>
-        </div>
+          </div>
+        </Slide>
 
         <Container className={classes.icons}>
           <Hidden xsDown>
-            <IconButton onClick={handleOpen}>
-              <Email style={{ fontSize: '60px' }} />
-            </IconButton>
+            <Slide in={home} direction="up" timeout={250}>
+              <IconButton onClick={handleOpen}>
+                <Email style={{ fontSize: '60px' }} />
+              </IconButton>
+            </Slide>
           </Hidden>
-          <IconButton href="https://github.com/notayogilee" target="_blank">
-            <GitHub style={{ fontSize: '60px' }} />
-          </IconButton>
-          <IconButton href="https://www.linkedin.com/in/lee-castelani-40bba31a5/" target="_blank">
-            <LinkedIn style={{ fontSize: '60px' }} />
-          </IconButton>
+          <Slide in={home} direction="up" timeout={500}>
+            <IconButton href="https://github.com/notayogilee" target="_blank">
+              <GitHub style={{ fontSize: '60px' }} />
+            </IconButton>
+          </Slide>
+          <Slide in={home} direction="up" timeout={600}>
+            <IconButton href="https://www.linkedin.com/in/lee-castelani-40bba31a5/" target="_blank">
+              <LinkedIn style={{ fontSize: '60px' }} />
+            </IconButton>
+          </Slide>
         </Container>
-        <Typography variant="h2" style={{ height: 'auto' }}>
-          notayogilee@gmail.com
+        <Slide in={home} direction="right" timeout={250}>
+          <Typography variant="h2" style={{ height: 'auto' }}>
+            notayogilee@gmail.com
         </Typography>
-
+        </Slide>
         <Modal
           aria-labelledby="email-modal"
           className={classes.modal}

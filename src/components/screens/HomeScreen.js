@@ -61,7 +61,7 @@ const HomeScreen = () => {
     <ThemeProvider theme={theme}>
       <div className={classes.root} id={bodyId}>
         {home &&
-          <LandingScreen />
+          <LandingScreen home={home} />
         }
         {resume &&
           <ResumeScreen />
