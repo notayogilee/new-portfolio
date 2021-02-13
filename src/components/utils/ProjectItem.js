@@ -70,22 +70,18 @@ const useStyles = makeStyles((theme) => ({
       padding: 0
     }
   },
-  media: {
-    height: 0,
-    paddingTop: '56.25%'
-  },
   links: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: '1rem'
+    marginTop: '1rem',
+
   },
   button: {
     padding: '0.5rem',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    border: 'solid 1px #333',
     borderRadius: '20px',
     marginRight: '1rem',
     background: '#F1B24B',
@@ -99,14 +95,19 @@ const ProjectItem = ({ image, gitHubLink, isCompleted, dateCompleted, title, des
   return (
     <ThemeProvider theme={theme}>
       <Card className={classes.root} elevation={0}>
-        <CardMedia
-          className={classes.media}
 
-          style={{
-            backgroundImage: `url(${image})`,
-            borderRadius: '15px'
-          }}
-          alt={title} />
+        <img
+          src={
+            urlFor(image)
+              .width(560)
+              .height(315)
+              .url()
+          }
+          alt={title}
+
+        />
+
+
         <CardContent>
           <Typography
             variant='h3'

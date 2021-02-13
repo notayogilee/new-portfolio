@@ -26,13 +26,7 @@ const ProjectsState = (props) => {
     const res = await sanityClient.fetch(`*[_type == "projects"] {
         _id,
         title,
-        mainImage{
-          asset->{
-            _id,
-            url
-          },
-          alt
-        },
+        mainImage,
         isCompleted,
         dateCompleted,
         body,

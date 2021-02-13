@@ -62,7 +62,7 @@ const ProjectsScreen = () => {
           return (
             <Grid item key={project._id} xs={12} md={12} lg={5} >
               <ProjectItem
-                image={project.mainImage.asset.url}
+                image={project.mainImage}
                 gitHubLink={project.gitHubLink}
                 deployedLink={project.deployedLink}
                 isCompleted={project.isCompleted}
@@ -88,7 +88,7 @@ const ProjectsScreen = () => {
           return (
             <Grid item key={project._id} xs={12} md={12} lg={5} >
               <ProjectItem
-                image={project.mainImage.asset.url}
+                image={project.mainImage}
                 gitHubLink={project.gitHubLink}
                 deployedLink={project.deployedLink}
                 isCompleted={project.isCompleted}
@@ -113,7 +113,7 @@ const ProjectsScreen = () => {
           return (
             <Grid item key={project._id} xs={12} md={12} lg={5} >
               <ProjectItem
-                image={project.mainImage.asset.url}
+                image={project.mainImage}
                 gitHubLink={project.gitHubLink}
                 deployedLink={project.deployedLink}
                 isCompleted={project.isCompleted}

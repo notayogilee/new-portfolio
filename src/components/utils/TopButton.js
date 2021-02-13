@@ -8,8 +8,8 @@ const TopButton = () => {
   }
   return (
     <div style={{ display: 'flex', justifyContent: 'flex-end', }}>
-      <Fab style={{ background: '#333' }}>
-        <Navigation onClick={topOfScreen} style={{ color: '#d68438' }} />
+      <Fab onClick={topOfScreen} style={{ background: '#333' }}>
+        <Navigation style={{ color: '#d68438' }} />
       </Fab>
     </div>
   )
