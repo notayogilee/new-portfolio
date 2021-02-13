@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import {
   Container,
   Typography,
-  Grid,
+  Grid
 } from '@material-ui/core'
 import ProjectItem from '../utils/ProjectItem'
 import TopButton from '../utils/TopButton'

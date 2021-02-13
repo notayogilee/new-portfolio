@@ -3,7 +3,7 @@ import Particles from 'react-tsparticles'
 
 const particles = () => {
   return (
-    <div style={{ height: '100%', width: '2100px', transform: 'translateX(-10%)' }}>
+    <div style={{ height: '100%', width: '2700px', transform: 'translateX(-10%)' }}>
       <Particles
         id="tsparticles"
         options={{
@@ -12,14 +12,14 @@ const particles = () => {
               value: "#333",
             },
           },
-          fpsLimit: 60,
+          fpsLimit: 30,
           interactivity: {
             detectsOn: "window",
             events: {
               resize: {
                 enable: true,
                 densityAuto: true,
-                densityArea: 100
+                densityArea: 50
               },
               onClick: {
                 enable: true,
@@ -33,16 +33,16 @@ const particles = () => {
             },
             modes: {
               bubble: {
-                distance: 400,
+                distance: 100,
                 duration: 4,
                 opacity: 0.4,
-                size: 30,
+                size: 10,
               },
               push: {
                 quantity: 4,
               },
               repulse: {
-                distance: 200,
+                distance: 100,
                 duration: 0.4,
               },
             },
@@ -50,14 +50,14 @@ const particles = () => {
           parallax: {
             enable: true,
             force: 100,
-            smooth: 10
+            smooth: 100
           },
           particles: {
             color: {
-              value: "#ffffff",
+              value: "#30f5ff",
             },
             links: {
-              color: "#ffffff",
+              color: "#f9ffc2",
               distance: 200,
               enable: true,
               opacity: 0.3,
@@ -71,7 +71,7 @@ const particles = () => {
               enable: true,
               outMode: "bounce",
               random: true,
-              speed: 6,
+              speed: 7,
               straight: false,
             },
             number: {

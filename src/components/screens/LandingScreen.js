@@ -128,12 +128,20 @@ const LandingScreen = ({ home }) => {
             </Slide>
           </Hidden>
           <Slide in={home} direction="up" timeout={500}>
-            <IconButton href="https://github.com/notayogilee" target="_blank">
+            <IconButton
+              href="https://github.com/notayogilee"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <GitHub style={{ fontSize: '60px' }} />
             </IconButton>
           </Slide>
           <Slide in={home} direction="up" timeout={600}>
-            <IconButton href="https://www.linkedin.com/in/lee-castelani-40bba31a5/" target="_blank">
+            <IconButton
+              href="https://www.linkedin.com/in/lee-castelani-40bba31a5/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <LinkedIn style={{ fontSize: '60px' }} />
             </IconButton>
           </Slide>

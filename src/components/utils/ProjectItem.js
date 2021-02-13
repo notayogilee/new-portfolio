@@ -5,10 +5,18 @@ import {
   Typography,
   Card,
   CardContent,
-  CardMedia
+  CardMedia,
+  IconButton
 } from '@material-ui/core'
-import { makeStyles, createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
-import Link from '@material-ui/core/Link'
+import {
+  makeStyles,
+  createMuiTheme,
+  ThemeProvider
+} from '@material-ui/core/styles'
+import {
+  GitHub,
+  Language
+} from '@material-ui/icons'
 import inProgress from '../../images/inProgress.png'
 
 // image builder tailored for the image in the response from sanity backend
@@ -65,6 +73,23 @@ const useStyles = makeStyles((theme) => ({
   media: {
     height: 0,
     paddingTop: '56.25%'
+  },
+  links: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: '1rem'
+  },
+  button: {
+    padding: '0.5rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    border: 'solid 1px #333',
+    borderRadius: '20px',
+    marginRight: '1rem',
+    background: '#F1B24B',
+    width: '140px'
   }
 }))
 
@@ -106,6 +131,41 @@ const ProjectItem = ({ image, gitHubLink, isCompleted, dateCompleted, title, des
           >
             {description}
           </Typography>
+          <div className={classes.links}>
+            {gitHubLink &&
+              <IconButton
+                className={classes.button}
+                href={gitHubLink}
+                target="_blank"
+                rel="noopener norefferrer"
+                aria-label="github link"
+              >
+                <GitHub fontSize="large" />
+
+                <Typography
+                  variant="div"
+                >
+                  Code
+                </Typography>
+              </IconButton>
+            }
+            {deployedLink &&
+              <IconButton
+                className={classes.button}
+                href={deployedLink}
+                target="_blank"
+                rel="noopener norefferrer"
+                aria-label="deployed website link"
+              >
+                <Language fontSize="large" />
+                <Typography
+                  variant="div"
+                >
+                  Website
+                </Typography>
+              </IconButton>
+            }
+          </div>
         </CardContent>
       </Card>
     </ThemeProvider>

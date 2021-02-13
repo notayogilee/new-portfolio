@@ -22,7 +22,6 @@ const ProjectsState = (props) => {
   const fetchProjectsDetails = async () => {
 
     dispatch({ type: SET_LOADING })
-    console.log('projects request made')
 
     const res = await sanityClient.fetch(`*[_type == "projects"] {
         _id,

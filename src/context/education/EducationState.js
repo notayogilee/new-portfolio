@@ -22,7 +22,6 @@ const EducationState = (props) => {
   // Get education details
   const fetchEducationDetails = async () => {
     dispatch({ type: SET_LOADING })
-    console.log('education resquest made')
 
     const res = await sanityClient.fetch(`*[_type == "education"] {
       _id,
