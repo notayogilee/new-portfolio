@@ -65,10 +65,29 @@ const useStyles = makeStyles((theme) => ({
   media: {
     height: 0,
     paddingTop: '80%'
-  }
+  },
+  image: {
+    position: 'relative',
+    height: '315px',
+    width: '558px',
+    margin: 'auto',
+    '@media (max-width: 700px)': {
+      height: '155px',
+      width: '280px'
+    }
+  },
+  imageOverlay: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    background: 'rgba(0,0,0,0.3)',
+    width: 'inherit',
+    height: 'inherit'
+  },
 }))
 
-const EducationItem = ({ schoolName, fromDate, toDate, description, course, diploma, image, link }) => {
+const EducationItem = ({ schoolName, fromDate, toDate, description, diploma, image, link, isCompleted, title }) => {
   const classes = useStyles()
 
   return (
@@ -80,24 +99,38 @@ const EducationItem = ({ schoolName, fromDate, toDate, description, course, dipl
           target='_blank'
           style={{ textDecoration: 'none' }}
         >
-          <CardMedia
+          <Typography
+            variant='h3'
+            color='secondary'
+            style={{ marginBottom: '0.5rem' }}
+          >
+            {title}
+          </Typography>
+          <div className={classes.image}>
+            <img
+              style={{ height: 'inherit', width: 'inherit' }}
+              src={
+                urlFor(image)
+                  .url()
+              }
+              alt={title}
+            />
+            {!isCompleted &&
+              <img src={inProgress} alt="" className={classes.imageOverlay} />
+            }
+          </div>
+
+          {/* <CardMedia
             className={classes.media}
             style={{
               backgroundImage: `url(${image})`,
               borderRadius: '15px'
             }}
-            alt={schoolName} />
+            alt={schoolName} /> */}
           <CardContent>
-            <Typography
-              variant='h3'
-              color='secondary'
-            >
-              {course}
-            </Typography>
             <Typography
               variant='h6'
               color='secondary'
-              style={{ marginTop: '0.5rem' }}
             >
 
               {diploma ? (`${schoolName} | ${diploma}`) : (schoolName)}

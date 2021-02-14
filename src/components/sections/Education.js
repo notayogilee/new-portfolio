@@ -58,7 +58,7 @@ const Education = () => {
               <EducationItem
                 image={item.mainImage.asset.url}
                 schoolName={item.school}
-                course={item.title}
+                title={item.title}
                 fromDate={item.fromDate ? moment(item.fromDate).format("MMM YYYY") : ""}
                 toDate={item.toDate ? moment(item.toDate).format("MMM YYYY") : ""}
                 // BlockContent is a package to facilitate the description content of sanity 
@@ -66,6 +66,7 @@ const Education = () => {
                 description={<BlockContent blocks={item.description} projectId="kd4r1s4u" dataset="production" />}
                 diploma={item.diploma}
                 link={item.link}
+                isCompleted={item.isCompleted}
               />
             </Grid>
 
@@ -95,6 +96,7 @@ const Education = () => {
                 description={item.description ? <BlockContent blocks={item.description} projectId="kd4r1s4u" dataset="production" /> : ""}
                 diploma={item.diploma}
                 link={item.link}
+                isCompleted={item.isCompleted}
               />
             </Grid>
 

@@ -63,7 +63,7 @@ const ProjectsScreen = () => {
       <Grid container spacing={5} className={classes.container}>
         {personalProjects.length > 0 && personalProjects.map((project) => {
           return (
-            <Grid item key={project._id} xs={12} md={12} lg={5} >
+            <Grid item key={project._id} xs={12} md={12} lg={6}>
               <ProjectItem
                 image={project.mainImage}
                 gitHubLink={project.gitHubLink}
@@ -89,7 +89,7 @@ const ProjectsScreen = () => {
       <Grid container spacing={5} className={classes.container}>
         {udemyProjects.length > 0 && udemyProjects.map((project) => {
           return (
-            <Grid item key={project._id} xs={12} md={12} lg={5} >
+            <Grid item key={project._id} xs={12} md={12} lg={6} >
               <ProjectItem
                 image={project.mainImage}
                 gitHubLink={project.gitHubLink}
@@ -114,7 +114,7 @@ const ProjectsScreen = () => {
       <Grid container spacing={5} className={classes.container}>
         {lighthouseProjects.length > 0 && lighthouseProjects.map((project) => {
           return (
-            <Grid item key={project._id} xs={12} md={12} lg={5} >
+            <Grid item key={project._id} xs={12} md={12} lg={6} >
               <ProjectItem
                 image={project.mainImage}
                 gitHubLink={project.gitHubLink}

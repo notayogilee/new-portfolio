@@ -17,7 +17,7 @@ import {
   GitHub,
   Language
 } from '@material-ui/icons'
-import inProgress from '../../images/inProgress.png'
+import comingSoon from '../../images/comingSoon.png'
 
 // image builder tailored for the image in the response from sanity backend
 const builder = imageUrlBuilder(sanityClient)
@@ -63,6 +63,7 @@ const theme = createMuiTheme({
 const useStyles = makeStyles((theme) => ({
   root: {
     height: 'auto',
+    width: '100%',
     padding: '1rem',
     background: '#d68438',
     '@media (max-width: 600px)': {
@@ -81,6 +82,25 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: '0.5rem'
+  },
+  image: {
+    position: 'relative',
+    height: '315px',
+    width: '558px',
+    margin: 'auto',
+    '@media (max-width: 700px)': {
+      height: '155px',
+      width: '280px'
+    }
+  },
+  imageOverlay: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    background: 'rgba(0,0,0,0.3)',
+    width: 'inherit',
+    height: 'inherit'
   },
   links: {
     display: 'flex',
@@ -130,16 +150,22 @@ const ProjectItem = ({ image, gitHubLink, isCompleted, dateCompleted, title, des
               }
             </Typography>
           </div>
-          <img
-            src={
-              urlFor(image)
-                .width(558)
-                .height(315)
-                .url()
-            }
-            alt={title}
 
-          />
+          <div className={classes.image}>
+            <img
+              style={{ height: 'inherit', width: 'inherit' }}
+              src={
+                urlFor(image)
+                  .url()
+              }
+              alt={title}
+
+            />
+            {!isCompleted &&
+              <img src={comingSoon} alt="" className={classes.imageOverlay} />
+            }
+          </div>
+
           <Typography
             variant='h5'
             color='secondary'
