@@ -1,4 +1,6 @@
 import React, { useContext } from 'react'
+import imageUrlBuilder from '@sanity/image-url'
+import sanityClient from '../../client'
 import CircleNavContext from '../../context/circleNav/circleNavContext'
 import moment from 'moment'
 import ScreenContext from '../../context/screen/screenContext'
@@ -12,6 +14,13 @@ import {
 } from '@material-ui/core'
 import ProjectItem from '../utils/ProjectItem'
 import TopButton from '../utils/TopButton'
+
+// image builder tailored for the image in the response from sanity backend
+const builder = imageUrlBuilder(sanityClient)
+
+function urlFor(source) {
+  return builder.image(source)
+}
 
 const useStyles = makeStyles({
   root: {
@@ -30,8 +39,20 @@ const useStyles = makeStyles({
       padding: 0
     }
   },
-  title: {
-    margin: '4rem 0 1rem 0'
+  header: {
+    display: 'flex',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    paddingTop: '4rem'
+  },
+  image: {
+    width: '100px',
+    height: '100px',
+    borderRadius: '50%',
+    '@media (max-width: 600px)': {
+      width: '60px',
+      height: '60px'
+    }
   }
 })
 
@@ -54,12 +75,23 @@ const ProjectsScreen = () => {
   return (
     <Container className={classes.root} maxWidth="lg" disableGutters>
       {loading && 'Loading...'}
-      <Typography
-        variant="h1"
-        className={classes.title}
-      >
-        Personal Projects
-          </Typography>
+      {personalProjects.length > 0 &&
+        <div className={classes.header}>
+          <div>
+            <img src={urlFor(personalProjects[0].typeImage).url()} alt="Personal projects" className={classes.image} />
+          </div>
+
+          <Typography
+            variant="h1"
+            component="div"
+            style={{ textAlign: 'center' }}
+          >
+            Personal Projects
+      </Typography>
+        </div>
+      }
+
+
       <Grid container spacing={5} className={classes.container}>
         {personalProjects.length > 0 && personalProjects.map((project) => {
           return (

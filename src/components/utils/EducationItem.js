@@ -4,10 +4,13 @@ import sanityClient from '../../client'
 import {
   Typography,
   Card,
-  CardContent,
-  CardMedia
+  CardContent
 } from '@material-ui/core'
-import { makeStyles, createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
+import {
+  makeStyles,
+  createMuiTheme,
+  ThemeProvider
+} from '@material-ui/core/styles'
 import Link from '@material-ui/core/Link'
 import inProgress from '../../images/inProgress.png'
 
@@ -95,7 +98,7 @@ const EducationItem = ({ schoolName, fromDate, toDate, description, diploma, ima
       <Card className={classes.root} elevation={0}>
         <Link
           href={link}
-          rel='noopener'
+          rel='noopener norefferer'
           target='_blank'
           style={{ textDecoration: 'none' }}
         >
@@ -108,7 +111,10 @@ const EducationItem = ({ schoolName, fromDate, toDate, description, diploma, ima
           </Typography>
           <div className={classes.image}>
             <img
-              style={{ height: 'inherit', width: 'inherit' }}
+              style={{
+                height: 'inherit',
+                width: 'inherit'
+              }}
               src={
                 urlFor(image)
                   .url()
@@ -120,13 +126,6 @@ const EducationItem = ({ schoolName, fromDate, toDate, description, diploma, ima
             }
           </div>
 
-          {/* <CardMedia
-            className={classes.media}
-            style={{
-              backgroundImage: `url(${image})`,
-              borderRadius: '15px'
-            }}
-            alt={schoolName} /> */}
           <CardContent>
             <Typography
               variant='h6'
@@ -153,7 +152,10 @@ const EducationItem = ({ schoolName, fromDate, toDate, description, diploma, ima
             <Typography
               variant='h5'
               color='secondary'
-              style={{ textAlign: 'justify', marginTop: '0.5rem' }}
+              style={{
+                textAlign: 'justify',
+                marginTop: '0.5rem'
+              }}
             >
               {description}
             </Typography>

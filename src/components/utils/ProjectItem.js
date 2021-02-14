@@ -5,7 +5,6 @@ import {
   Typography,
   Card,
   CardContent,
-  CardMedia,
   IconButton
 } from '@material-ui/core'
 import {
@@ -159,7 +158,6 @@ const ProjectItem = ({ image, gitHubLink, isCompleted, dateCompleted, title, des
                   .url()
               }
               alt={title}
-
             />
             {!isCompleted &&
               <img src={comingSoon} alt="" className={classes.imageOverlay} />
