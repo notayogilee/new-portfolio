@@ -46,9 +46,10 @@ const useStyles = makeStyles({
     paddingTop: '4rem'
   },
   image: {
-    width: '100px',
-    height: '100px',
+    width: '125px',
+    height: '125px',
     borderRadius: '50%',
+    background: '#fff',
     '@media (max-width: 600px)': {
       width: '60px',
       height: '60px'
@@ -67,102 +68,59 @@ const ProjectsScreen = () => {
   const { projects } = screenContext
   const { projects: myProjects, loading } = projectsContext
 
-  // Separate projects into groups
+  // Separate projects into groups to map out details of projects
   const personalProjects = myProjects.filter((project) => project.type === 'Personal Project')
   const lighthouseProjects = myProjects.filter((project) => project.type === 'Lighthouse Labs Project')
   const udemyProjects = myProjects.filter((project) => project.type === 'Udemy Project')
 
+  // create array to map out grouped projects for title and image of groups
+  const allProjects = [personalProjects, udemyProjects, lighthouseProjects]
+
   return (
     <Container className={classes.root} maxWidth="lg" disableGutters>
       {loading && 'Loading...'}
-      {personalProjects.length > 0 &&
-        <div className={classes.header}>
-          <div>
-            <img src={urlFor(personalProjects[0].typeImage).url()} alt="Personal projects" className={classes.image} />
-          </div>
 
-          <Typography
-            variant="h1"
-            component="div"
-            style={{ textAlign: 'center' }}
-          >
-            Personal Projects
-      </Typography>
-        </div>
-      }
+      {allProjects && allProjects.map((projectType) => {
+        return (
+          <>
+            <div className={classes.header}>
+              <div>
+                <img src={urlFor(projectType[0].typeImage).url()} alt="Personal projects" className={classes.image} />
+              </div>
 
+              <Typography
+                variant="h1"
+                component="div"
+                style={{ textAlign: 'center' }}
+              >
+                {projectType[0].type}
+              </Typography>
+            </div>
 
-      <Grid container spacing={5} className={classes.container}>
-        {personalProjects.length > 0 && personalProjects.map((project) => {
-          return (
-            <Grid item key={project._id} xs={12} md={12} lg={6}>
-              <ProjectItem
-                image={project.mainImage}
-                gitHubLink={project.gitHubLink}
-                deployedLink={project.deployedLink}
-                isCompleted={project.isCompleted}
-                dateCompleted={project.dateCompleted ? moment(project.dateCompleted).format("MMM YYYY") : ""}
-                title={project.title}
-                description={<BlockContent blocks={project.body} projectId="kd4r1s4u" dataset="production" />}
-                type={project.type}
-                typeImage={project.typeImage}
-              />
+            <Grid container spacing={5} className={classes.container}>
+
+              {projectType.map((project) => {
+                return (
+                  <Grid item key={project._id} xs={12} md={12} lg={6}>
+                    <ProjectItem
+                      image={project.mainImage}
+                      gitHubLink={project.gitHubLink}
+                      deployedLink={project.deployedLink}
+                      isCompleted={project.isCompleted}
+                      dateCompleted={project.dateCompleted ? moment(project.dateCompleted).format("MMM YYYY") : ""}
+                      title={project.title}
+                      description={<BlockContent blocks={project.body} projectId="kd4r1s4u" dataset="production" />}
+                      type={project.type}
+                      typeImage={project.typeImage}
+                    />
+                  </Grid>
+                )
+              })}
             </Grid>
-          )
-        })}
-      </Grid>
+          </>
+        )
+      })}
 
-      <Typography
-        variant="h1"
-        className={classes.title}
-      >
-        Udemy Projects
-        </Typography>
-      <Grid container spacing={5} className={classes.container}>
-        {udemyProjects.length > 0 && udemyProjects.map((project) => {
-          return (
-            <Grid item key={project._id} xs={12} md={12} lg={6} >
-              <ProjectItem
-                image={project.mainImage}
-                gitHubLink={project.gitHubLink}
-                deployedLink={project.deployedLink}
-                isCompleted={project.isCompleted}
-                dateCompleted={project.dateCompleted ? moment(project.dateCompleted).format("MMM YYYY") : ""}
-                title={project.title}
-                description={<BlockContent blocks={project.body} projectId="kd4r1s4u" dataset="production" />}
-                type={project.type}
-                typeImage={project.typeImage}
-              />
-            </Grid>
-          )
-        })}
-      </Grid>
-      <Typography
-        variant="h1"
-        className={classes.title}
-      >
-        Lighthouse Labs Projects
-        </Typography>
-      <Grid container spacing={5} className={classes.container}>
-        {lighthouseProjects.length > 0 && lighthouseProjects.map((project) => {
-          return (
-            <Grid item key={project._id} xs={12} md={12} lg={6} >
-              <ProjectItem
-                image={project.mainImage}
-                gitHubLink={project.gitHubLink}
-                deployedLink={project.deployedLink}
-                isCompleted={project.isCompleted}
-                dateCompleted={project.dateCompleted ? moment(project.dateCompleted).format("MMM YYYY") : ""}
-                title={project.title}
-                description={<BlockContent blocks={project.body} projectId="kd4r1s4u" dataset="production" />}
-                type={project.type}
-                typeImage={project.typeImage}
-              />
-            </Grid>
-          )
-        })}
-
-      </Grid>
       <TopButton />
     </Container>
   )
