@@ -4,7 +4,6 @@ import ScreenReducer from './screenReducer'
 import {
   OPEN_HOME_SCREEN,
   OPEN_RESUME_SCREEN,
-  OPEN_COVER_LETTER_SCREEN,
   OPEN_PROJECTS_SCREEN
 } from '../types'
 
@@ -12,7 +11,6 @@ const ScreenState = (props) => {
   const initialState = {
     home: true,
     resume: false,
-    coverLetter: false,
     projects: false
   }
 
@@ -24,9 +22,6 @@ const ScreenState = (props) => {
   // Open Resume Screen
   const openResumeScreen = () => dispatch({ type: OPEN_RESUME_SCREEN })
 
-  // Open Cover Letter Screen
-  const openCoverLetterScreen = () => dispatch({ type: OPEN_COVER_LETTER_SCREEN })
-
   // Open Projects Screen
   const openProjectsScreen = () => dispatch({ type: OPEN_PROJECTS_SCREEN })
 
@@ -34,11 +29,9 @@ const ScreenState = (props) => {
     value={{
       home: state.home,
       resume: state.resume,
-      coverLetter: state.coverLetter,
       projects: state.projects,
       openHomeScreen,
       openResumeScreen,
-      openCoverLetterScreen,
       openProjectsScreen
     }}
   >

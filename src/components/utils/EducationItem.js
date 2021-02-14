@@ -72,10 +72,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     margin: 'auto'
   },
-  // media: {
-  //   height: 0,
-  //   paddingTop: '80%'
-  // },
   image: {
     position: 'relative',
     height: '315px',
@@ -90,7 +86,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     top: '50%',
     left: '50%',
-    transform: 'translate(-50%, -50%)',
+    transform: 'translate(-50%, -50.15%)',
     background: 'rgba(0,0,0,0.3)',
     width: 'inherit',
     height: 'inherit'

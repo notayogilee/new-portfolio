@@ -15,7 +15,7 @@ const UnderNav = () => {
   const projectsContext = useContext(ProjectsContext)
 
   const { open, closeCircleNav } = circleNavContext
-  const { openHomeScreen, openResumeScreen, openCoverLetterScreen, openProjectsScreen } = screenContext
+  const { openHomeScreen, openResumeScreen, openProjectsScreen } = screenContext
   const { fetchProjectsDetails } = projectsContext
 
   const noScroll = function () {
@@ -32,13 +32,8 @@ const UnderNav = () => {
     window.removeEventListener('scroll', noScroll)
     closeCircleNav()
   }
-  const openCoverLetter = () => {
-    openCoverLetterScreen()
-    window.removeEventListener('scroll', noScroll)
-    closeCircleNav()
-  }
-  const openProjects = () => {
 
+  const openProjects = () => {
     openProjectsScreen()
     if (!sessionStorage.getItem('projects')) {
       fetchProjectsDetails()
@@ -63,34 +58,27 @@ const UnderNav = () => {
         justifyContent: 'center',
         position: 'fixed',
         bottom: '60px',
-        left: 0,
+        left: '30px',
         color: '#fff',
         paddingLeft: '30px',
         zIndex: 100
       }}>
         <Slide in={open} direction="right" timeout={500}>
           <Button onClick={openHome} style={{ zIndex: 100 }}>
-            <Typography style={{ textTransform: 'uppercase', margin: '20px 0', color: '#fff' }}>Home</Typography>
+            <Typography variant="h6" style={{ textTransform: 'uppercase', margin: '20px 0', color: '#fff' }}>Home</Typography>
           </Button>
-
         </Slide>
+
         <Slide in={open} direction="right" timeout={500}>
           <Button onClick={openResume}>
-            <Typography style={{ textTransform: 'uppercase', margin: '20px 0', color: '#fff' }}>Resume</Typography>
+            <Typography variant="h6" style={{ textTransform: 'uppercase', margin: '20px 0', color: '#fff' }}>Resume</Typography>
           </Button>
-
         </Slide>
-        <Slide in={open} direction="right" timeout={500}>
-          <Button onClick={openCoverLetter}>
-            <Typography style={{ textTransform: 'uppercase', margin: '20px 0', color: '#fff' }}>Cover Letter</Typography>
-          </Button>
 
-        </Slide>
         <Slide in={open} direction="right" timeout={500}>
           <Button onClick={openProjects}>
-            <Typography style={{ textTransform: 'uppercase', margin: '20px 0', color: '#fff' }}>Projects</Typography>
+            <Typography variant="h6" style={{ textTransform: 'uppercase', margin: '20px 0', color: '#fff' }}>Projects</Typography>
           </Button>
-
         </Slide>
       </nav>
     </div>

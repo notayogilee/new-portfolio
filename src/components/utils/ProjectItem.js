@@ -87,6 +87,7 @@ const useStyles = makeStyles((theme) => ({
     height: '315px',
     width: '558px',
     margin: 'auto',
+    background: '#d68438',
     '@media (max-width: 700px)': {
       height: '155px',
       width: '280px'
@@ -96,7 +97,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     top: '50%',
     left: '50%',
-    transform: 'translate(-50%, -50%)',
+    transform: 'translate(-50%, -50.15%)',
     background: 'rgba(0,0,0,0.3)',
     width: 'inherit',
     height: 'inherit'
@@ -154,7 +155,8 @@ const ProjectItem = ({ image, gitHubLink, isCompleted, dateCompleted, title, des
             <img
               style={{
                 height: 'inherit',
-                width: 'inherit'
+                width: 'inherit',
+                background: '#d68438',
               }}
               src={
                 urlFor(image)

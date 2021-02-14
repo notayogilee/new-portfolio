@@ -4,9 +4,7 @@ import ScreenContext from '../../context/screen/screenContext'
 import { makeStyles, createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import LandingScreen from './LandingScreen'
 import ResumeScreen from '../screens/ResumeScreen'
-import CoverLetterScreen from '../screens/CoverLetterScreen'
 import ProjectsScreen from '../screens/ProjectsScreen'
-// import ResumeNav from '../utils/ResumeNav'
 
 const theme = createMuiTheme({
   typography: {
@@ -58,7 +56,7 @@ const HomeScreen = () => {
   const bodyId = circleNavContext.bodyId
   const circleNavOpen = circleNavContext.open
 
-  const { home, resume, coverLetter, projects } = screenContext
+  const { home, resume, projects } = screenContext
 
   return (
     <ThemeProvider theme={theme}>
@@ -68,9 +66,6 @@ const HomeScreen = () => {
         }
         {resume &&
           <ResumeScreen />
-        }
-        {coverLetter &&
-          <CoverLetterScreen />
         }
         {projects &&
           <ProjectsScreen />
