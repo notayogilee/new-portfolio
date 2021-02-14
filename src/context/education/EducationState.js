@@ -44,13 +44,18 @@ const EducationState = (props) => {
       link
     }`)
 
+    const onlineEducation = res.filter((course) => course.isOnline)
+    const schoolEducation = res.filter((course) => !course.isOnline)
+
+    const allEducation = [schoolEducation, onlineEducation]
+
     dispatch({
       type: GET_EDUCATION_DETAILS,
-      payload: res
+      payload: allEducation
     })
 
     // save res to session storage - if user comes back, don't need to fetch again
-    sessionStorage.setItem('education', JSON.stringify(res))
+    sessionStorage.setItem('education', JSON.stringify(allEducation))
   }
 
   return <educationContext.Provider

@@ -65,10 +65,17 @@ const useStyles = makeStyles((theme) => ({
       padding: 0
     }
   },
-  media: {
-    height: 0,
-    paddingTop: '80%'
+  content: {
+    display: 'flex',
+    flexDirection: 'column',
+    maxWidth: '700px',
+    justifyContent: 'center',
+    margin: 'auto'
   },
+  // media: {
+  //   height: 0,
+  //   paddingTop: '80%'
+  // },
   image: {
     position: 'relative',
     height: '315px',
@@ -96,37 +103,37 @@ const EducationItem = ({ schoolName, fromDate, toDate, description, diploma, ima
   return (
     <ThemeProvider theme={theme}>
       <Card className={classes.root} elevation={0}>
-        <Link
-          href={link}
-          rel='noopener norefferer'
-          target='_blank'
-          style={{ textDecoration: 'none' }}
-        >
-          <Typography
-            variant='h3'
-            color='secondary'
-            style={{ marginBottom: '0.5rem' }}
+        <CardContent className={classes.content}>
+          <Link
+            href={link}
+            rel='noopener norefferer'
+            target='_blank'
+            style={{ textDecoration: 'none' }}
           >
-            {title}
-          </Typography>
-          <div className={classes.image}>
-            <img
-              style={{
-                height: 'inherit',
-                width: 'inherit'
-              }}
-              src={
-                urlFor(image)
-                  .url()
+            <Typography
+              variant='h3'
+              color='secondary'
+              style={{ marginBottom: '0.5rem' }}
+            >
+              {title}
+            </Typography>
+            <div className={classes.image}>
+              <img
+                style={{
+                  height: 'inherit',
+                  width: 'inherit'
+                }}
+                src={
+                  urlFor(image)
+                    .url()
+                }
+                alt={title}
+              />
+              {!isCompleted &&
+                <img src={inProgress} alt="" className={classes.imageOverlay} />
               }
-              alt={title}
-            />
-            {!isCompleted &&
-              <img src={inProgress} alt="" className={classes.imageOverlay} />
-            }
-          </div>
+            </div>
 
-          <CardContent>
             <Typography
               variant='h6'
               color='secondary'
@@ -159,8 +166,8 @@ const EducationItem = ({ schoolName, fromDate, toDate, description, diploma, ima
             >
               {description}
             </Typography>
-          </CardContent>
-        </Link>
+          </Link>
+        </CardContent>
       </Card>
     </ThemeProvider>
   )

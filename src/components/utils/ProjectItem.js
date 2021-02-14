@@ -152,7 +152,10 @@ const ProjectItem = ({ image, gitHubLink, isCompleted, dateCompleted, title, des
 
           <div className={classes.image}>
             <img
-              style={{ height: 'inherit', width: 'inherit' }}
+              style={{
+                height: 'inherit',
+                width: 'inherit'
+              }}
               src={
                 urlFor(image)
                   .url()
