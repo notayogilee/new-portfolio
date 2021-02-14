@@ -43,10 +43,11 @@ const EducationState = (props) => {
       description,
       link
     }`)
-
+    // Separate education into groups to map out details of education in education section
     const onlineEducation = res.filter((course) => course.isOnline)
     const schoolEducation = res.filter((course) => !course.isOnline)
 
+    // create array to map out grouped education for title of groups in educatin section
     const allEducation = [schoolEducation, onlineEducation]
 
     dispatch({

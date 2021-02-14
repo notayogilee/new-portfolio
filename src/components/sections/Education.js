@@ -10,7 +10,7 @@ import {
 } from '@material-ui/core'
 import EducationItem from '../utils/EducationItem'
 import TopButton from '../utils/TopButton'
-import Particles from '../utils/particles'
+import Spinner from '../utils/Spinner'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,7 +39,8 @@ const Education = () => {
 
   return (
     <Container className={classes.root} maxWidth="lg" disableGutters>
-      {loading && <Particles />}
+      {loading &&
+        <Spinner />}
       {education && education.length > 0 && education.map((educationItem) => {
         return (
           <>

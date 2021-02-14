@@ -14,6 +14,7 @@ import {
 } from '@material-ui/core'
 import ProjectItem from '../utils/ProjectItem'
 import TopButton from '../utils/TopButton'
+import Spinner from '../utils/Spinner'
 
 // image builder tailored for the image in the response from sanity backend
 const builder = imageUrlBuilder(sanityClient)
@@ -72,7 +73,7 @@ const ProjectsScreen = () => {
     <Container className={classes.root} maxWidth="lg" disableGutters>
       {loading &&
         <div>
-          <Typography variant="h1">Loading</Typography>
+          <Spinner />
         </div>
       }
       {myProjects && myProjects.length > 0 && myProjects.map((projectType) => {

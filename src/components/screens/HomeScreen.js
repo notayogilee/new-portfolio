@@ -65,7 +65,7 @@ const HomeScreen = () => {
           <LandingScreen home={home} />
         }
         {resume &&
-          <ResumeScreen />
+          <ResumeScreen resume={resume} />
         }
         {projects &&
           <ProjectsScreen />

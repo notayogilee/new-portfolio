@@ -59,9 +59,9 @@ const ResumeNav = () => {
     showSkillsSection()
   }
 
-  const showEducation = async () => {
+  const showEducation = () => {
     if (!sessionStorage.getItem('education')) {
-      await fetchEducationDetails()
+      fetchEducationDetails()
     }
     showEducationSection()
   }
