@@ -68,19 +68,14 @@ const ProjectsScreen = () => {
   const { projects } = screenContext
   const { projects: myProjects, loading } = projectsContext
 
-  // Separate projects into groups to map out details of projects
-  const personalProjects = myProjects.filter((project) => project.type === 'Personal Project')
-  const lighthouseProjects = myProjects.filter((project) => project.type === 'Lighthouse Labs Project')
-  const udemyProjects = myProjects.filter((project) => project.type === 'Udemy Project')
-
-  // create array to map out grouped projects for title and image of groups
-  const allProjects = [personalProjects, udemyProjects, lighthouseProjects]
-
   return (
     <Container className={classes.root} maxWidth="lg" disableGutters>
-      {loading && 'Loading...'}
-
-      {allProjects && allProjects.map((projectType) => {
+      {loading &&
+        <div>
+          <Typography variant="h1">Loading</Typography>
+        </div>
+      }
+      {myProjects && myProjects.length > 0 && myProjects.map((projectType) => {
         return (
           <>
             <div className={classes.header}>
@@ -119,8 +114,9 @@ const ProjectsScreen = () => {
             </Grid>
           </>
         )
-      })}
-
+      }
+      )
+      }
       <TopButton />
     </Container>
   )

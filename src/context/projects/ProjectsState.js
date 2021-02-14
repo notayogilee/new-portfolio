@@ -36,13 +36,21 @@ const ProjectsState = (props) => {
         "typeImage": category->image
       }`)
 
+    // Separate projects into groups to map out details of projects on projectsScreen
+    const personalProjects = res.filter((project) => project.type === 'Personal Projects')
+    const lighthouseProjects = res.filter((project) => project.type === 'Lighthouse Labs Projects')
+    const udemyProjects = res.filter((project) => project.type === 'Udemy Projects')
+
+    // create array to map out grouped projects for title and image of groups on projectsScreen
+    const allProjects = [personalProjects, udemyProjects, lighthouseProjects]
+
     dispatch({
       type: GET_PROJECTS_DETAILS,
-      payload: res
+      payload: allProjects
     })
 
     // save res to session storage - if user comes back, don't need to fetch again
-    sessionStorage.setItem('projects', JSON.stringify(res))
+    sessionStorage.setItem('projects', JSON.stringify(allProjects))
   }
 
   return <projectsContext.Provider
