@@ -72,9 +72,9 @@ const particles = () => {
             number: {
               density: {
                 enable: true,
-                value_area: 500,
+                value_area: 700,
               },
-              value: 80,
+              value: 100,
             },
             opacity: {
               value: 0.2,
