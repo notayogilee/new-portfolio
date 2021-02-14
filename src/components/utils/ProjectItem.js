@@ -63,19 +63,33 @@ const theme = createMuiTheme({
 const useStyles = makeStyles((theme) => ({
   root: {
     height: 'auto',
-    width: '100%',
     padding: '1rem',
     background: '#d68438',
     '@media (max-width: 600px)': {
       padding: 0
     }
   },
+  content: {
+    display: 'flex',
+    flexDirection: 'column',
+    maxWidth: '700px',
+    justifyContent: 'center',
+    margin: 'auto'
+  },
+  header: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: '0.5rem'
+  },
   links: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: '1rem',
-
+    '@media (max-width: 600px)': {
+      flexDirection: 'column',
+    }
   },
   button: {
     padding: '0.5rem',
@@ -85,7 +99,10 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '20px',
     marginRight: '1rem',
     background: '#F1B24B',
-    width: '140px'
+    width: '140px',
+    '@media (max-width: 600px)': {
+      marginTop: '0.5rem'
+    }
   }
 }))
 
@@ -95,40 +112,38 @@ const ProjectItem = ({ image, gitHubLink, isCompleted, dateCompleted, title, des
   return (
     <ThemeProvider theme={theme}>
       <Card className={classes.root} elevation={0}>
-
-        <img
-          src={
-            urlFor(image)
-              .width(560)
-              .height(315)
-              .url()
-          }
-          alt={title}
-
-        />
-
-
-        <CardContent>
-          <Typography
-            variant='h3'
-            color='secondary'
-          >
-            {title}
-          </Typography>
-          <Typography
-            variant='h6'
-            color='secondary'
-            style={{ marginTop: '0.5rem' }}
-          >
-            {dateCompleted &&
-              `Completed ${dateCompleted}`
+        <CardContent className={classes.content}>
+          <div className={classes.header}>
+            <Typography
+              variant='h3'
+              color='secondary'
+            >
+              {title}
+            </Typography>
+            <Typography
+              variant='h6'
+              color='secondary'
+              style={{ marginTop: '0.5rem' }}
+            >
+              {dateCompleted &&
+                `Completed ${dateCompleted}`
+              }
+            </Typography>
+          </div>
+          <img
+            src={
+              urlFor(image)
+                .width(558)
+                .height(315)
+                .url()
             }
-          </Typography>
+            alt={title}
 
+          />
           <Typography
             variant='h5'
             color='secondary'
-            style={{ textAlign: 'justify', marginTop: '0.5rem' }}
+            style={{ textAlign: 'justify', marginTop: '0.5rem', width: '100%' }}
           >
             {description}
           </Typography>

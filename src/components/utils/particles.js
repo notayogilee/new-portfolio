@@ -12,7 +12,7 @@ const particles = () => {
               value: "#333",
             },
           },
-          fpsLimit: 30,
+          fpsLimit: 50,
           interactivity: {
             detectsOn: "window",
             events: {
@@ -46,11 +46,6 @@ const particles = () => {
                 duration: 0.4,
               },
             },
-          },
-          parallax: {
-            enable: true,
-            force: 100,
-            smooth: 100
           },
           particles: {
             color: {

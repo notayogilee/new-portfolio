@@ -43,6 +43,9 @@ const useStyles = makeStyles((theme) => ({
     transformOrigin: 'top left',
     transition: 'transform 0.5s linear',
     zIndex: 90,
+    '@media (max-width: 600px)': {
+      padding: '4rem 0 0 0'
+    }
   }
 }))
 
