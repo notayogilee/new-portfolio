@@ -72,6 +72,13 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     margin: 'auto'
   },
+  title: {
+    marginBottom: '0.5rem',
+    height: '80px',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-end'
+  },
   image: {
     position: 'relative',
     height: '315px',
@@ -109,7 +116,7 @@ const EducationItem = ({ schoolName, fromDate, toDate, description, diploma, ima
             <Typography
               variant='h3'
               color='secondary'
-              style={{ marginBottom: '0.5rem' }}
+              className={classes.title}
             >
               {title}
             </Typography>

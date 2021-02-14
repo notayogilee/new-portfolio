@@ -22,9 +22,13 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-between',
     position: 'sticky',
     margin: 'auto',
-    top: 0,
+    marginBottom: '1rem',
+    top: '20px',
     zIndex: 5,
-    color: '#333'
+    color: '#333',
+    '@media (max-width: 600px)': {
+      justifyContent: 'space-evenly'
+    }
   },
 }))
 

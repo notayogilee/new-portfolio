@@ -64,19 +64,22 @@ const UnderNav = () => {
         zIndex: 100
       }}>
         <Slide in={open} direction="right" timeout={500}>
-          <Button onClick={openHome} style={{ zIndex: 100 }}>
+          <Button
+            disableRipple='true'
+            onClick={openHome}
+            style={{ zIndex: 100 }}>
             <Typography variant="h6" style={{ textTransform: 'uppercase', margin: '20px 0', color: '#fff' }}>Home</Typography>
           </Button>
         </Slide>
 
         <Slide in={open} direction="right" timeout={500}>
-          <Button onClick={openResume}>
+          <Button onClick={openResume} disableRipple='true'>
             <Typography variant="h6" style={{ textTransform: 'uppercase', margin: '20px 0', color: '#fff' }}>Resume</Typography>
           </Button>
         </Slide>
 
         <Slide in={open} direction="right" timeout={500}>
-          <Button onClick={openProjects}>
+          <Button onClick={openProjects} disableRipple='true'>
             <Typography variant="h6" style={{ textTransform: 'uppercase', margin: '20px 0', color: '#fff' }}>Projects</Typography>
           </Button>
         </Slide>

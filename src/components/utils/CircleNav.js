@@ -60,10 +60,18 @@ const CircleNav = () => {
     <div className={classes.circleContainer} id={rotateCircleNav}>
       <div className={classes.circle} >
 
-        <IconButton className={classes.iconButton} onClick={handleOpen}>
+        <IconButton
+          className={classes.iconButton}
+          onClick={handleOpen}
+          disableRipple="true"
+        >
           <Menu fontSize="large" className={classes.openButton} />
         </IconButton>
-        <IconButton className={classes.iconButton} onClick={handleClose}>
+        <IconButton
+          className={classes.iconButton}
+          onClick={handleClose}
+          disableRipple="true"
+        >
           <Close fontSize="large" className={classes.closeButton} />
         </IconButton>
 
