@@ -5,7 +5,8 @@ import ProjectsContext from '../../context/projects/projectsContext'
 import {
   Typography,
   Slide,
-  Button
+  Button,
+  Fade
 } from '@material-ui/core'
 import Particles from '../utils/particles'
 
@@ -51,7 +52,11 @@ const UnderNav = () => {
       position: 'absolute',
 
     }}>
-      <Particles />
+      {open &&
+        <Particles />
+      }
+
+
       <nav style={{
         display: 'flex',
         flexDirection: 'column',

@@ -3,7 +3,7 @@ import Particles from 'react-tsparticles'
 
 const particles = () => {
   return (
-    <div style={{ height: '100%', width: '2700px', transform: 'translateX(-10%)' }}>
+    <div style={{ width: '2600px' }}>
       <Particles
         id="tsparticles"
         options={{
@@ -12,7 +12,7 @@ const particles = () => {
               value: "#333",
             },
           },
-          fpsLimit: 50,
+          fpsLimit: 60,
           interactivity: {
             detectsOn: "window",
             events: {
@@ -72,9 +72,9 @@ const particles = () => {
             number: {
               density: {
                 enable: true,
-                value_area: 700,
+                value_area: 900,
               },
-              value: 100,
+              value: 80,
             },
             opacity: {
               value: 0.2,
