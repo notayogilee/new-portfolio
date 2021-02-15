@@ -14,7 +14,10 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: '5rem',
     display: 'flex',
     flexDirection: 'column',
-    margin: '2rem 0 4rem 0'
+    margin: '2rem 0 4rem 0',
+    '@media (max-width: 700px)': {
+      padding: '0.5rem'
+    }
   },
   container: {
     height: 'auto',
@@ -26,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     margin: '2rem 0 4rem 0',
     padding: '2rem',
     '@media (max-width: 700px)': {
-      padding: 0
+      padding: '0.5rem'
     }
   },
 }))
