@@ -15,7 +15,7 @@ const UnderNav = () => {
   const screenContext = useContext(ScreenContext)
   const projectsContext = useContext(ProjectsContext)
 
-  const { open, closeCircleNav } = circleNavContext
+  const { open, closeCircleNav, showParticles } = circleNavContext
   const { openHomeScreen, openResumeScreen, openProjectsScreen } = screenContext
   const { fetchProjectsDetails } = projectsContext
 
@@ -43,6 +43,17 @@ const UnderNav = () => {
     closeCircleNav()
   }
 
+  // particles is full screen when height/width ratio =< 0.5
+  // otherwise particles are pushed up
+  // particles need RAM or else they are choppy
+  // display only on larger screens
+  const windowWidth = window.screen.width
+  const windowHeight = window.screen.height
+  const ratio = windowHeight / windowWidth
+
+  console.log('ratio', ratio, 'ww', windowWidth)
+
+
   return (
     <div style={{
       height: '100vh',
@@ -52,7 +63,7 @@ const UnderNav = () => {
       position: 'absolute',
 
     }}>
-      {open &&
+      {(windowWidth >= 1024) && (ratio <= 0.5) && showParticles &&
         <Particles />
       }
 

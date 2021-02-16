@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     height: 'auto',
     minHeight: '92.5vh',
     width: '100%',
-    paddingBottom: '5rem',
+    padding: '0.5rem',
     overflow: 'hidden',
     margin: 'auto'
   },

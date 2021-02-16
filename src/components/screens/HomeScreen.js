@@ -10,20 +10,38 @@ const theme = createMuiTheme({
   typography: {
     h1: {
       fontSize: '5rem',
-      '@media (max-width: 600px)': {
-        fontSize: '2rem'
+      '@media (max-width: 700px)': {
+        fontSize: '3rem'
+      }
+    },
+    h2: {
+      fontSize: '3rem',
+      '@media (max-width: 700px)': {
+        fontSize: '2.2rem'
       }
     },
     h3: {
-      fontSize: '1.8rem',
-      '@media (max-width: 600px)': {
-        fontSize: '1rem'
+      fontSize: '2.2rem',
+      '@media (max-width: 700px)': {
+        fontSize: '1.6rem'
+      }
+    },
+    h4: {
+      fontSize: '2rem',
+      '@media (max-width: 700px)': {
+        fontSize: '1.2rem'
+      }
+    },
+    h5: {
+      fontSize: '1.6rem',
+      '@media (max-width: 700px)': {
+        fontSize: '1.2rem'
       }
     },
     h6: {
       fontSize: '1.2rem',
-      '@media (max-width: 600px)': {
-        fontSize: '0.9rem'
+      '@media (max-width: 700px)': {
+        fontSize: '1rem'
       }
     }
   }

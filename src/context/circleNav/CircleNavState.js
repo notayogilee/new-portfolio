@@ -3,14 +3,17 @@ import CircleNavContext from './circleNavContext'
 import CircleNavReducer from './circleNavReducer'
 import {
   OPEN_CIRCLE_NAV,
-  CLOSE_CIRCLE_NAV
+  CLOSE_CIRCLE_NAV,
+  SHOW_PARTICLES,
+  HIDE_PARTICLES
 } from '../types'
 
 const CircleNavState = (props) => {
   const initialState = {
     open: false,
     bodyId: '',
-    navId: ''
+    navId: '',
+    showParticles: false
   }
 
   const [state, dispatch] = useReducer(CircleNavReducer, initialState)
@@ -21,6 +24,9 @@ const CircleNavState = (props) => {
     window.scrollTo({ top: 0, left: 0 })
     // add hidden to overflow only on open to disable scroll
     document.body.style.overflow = "hidden"
+
+    // only show particles when open to optimize performance 
+    dispatch({ type: SHOW_PARTICLES })
     dispatch({
       type: OPEN_CIRCLE_NAV,
       payload: {
@@ -43,6 +49,10 @@ const CircleNavState = (props) => {
         navId: ''
       }
     })
+    // setTimeout to let screen cover nav then hide particles
+    setTimeout(() => {
+      dispatch({ type: HIDE_PARTICLES })
+    }, 500)
   }
 
   return <CircleNavContext.Provider
@@ -50,6 +60,7 @@ const CircleNavState = (props) => {
       open: state.open,
       bodyId: state.addId,
       navId: state.navId,
+      showParticles: state.showParticles,
       openCircleNav,
       closeCircleNav
     }}

@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     height: '92.5vh',
     width: '100%',
-    paddingBottom: '5rem',
+    padding: '0.5rem',
     display: 'flex',
     flexDirection: 'column',
     margin: '2rem 0 4rem 0',

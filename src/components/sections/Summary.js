@@ -10,21 +10,28 @@ import laptop from '../../images/bootcamp.jpg'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: '92.5vh',
+    height: 'auto',
+    minHeight: '80vh',
     width: '100%',
-    paddingBottom: '5rem'
+    padding: '0.5rem'
   },
   container: {
     backgroundImage: `url(${laptop})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    height: '80%',
+    backgroundRepeat: 'no-repeat',
+    height: 'auto',
+    minHeight: '60vh',
     width: '100%',
     position: 'relative',
+    '@media (max-width: 700px)': {
+      minHeight: '100vh'
+    }
   },
   text: {
     position: 'absolute',
-    height: '100%',
+    height: 'auto',
+    minHeight: '100%',
     width: '100%',
     padding: '2rem',
     textAlign: 'justify',
@@ -42,7 +49,14 @@ const Summary = ({ summary }) => {
     <div>
       <Container className={classes.root} maxWidth="lg" disableGutters >
         <Slide in={summary} direction="left" timeout={250}>
-          <Typography variant="h1">Summary</Typography>
+          <Typography
+            variant="h1"
+            style={{
+              margin: '3rem 0 1rem 0'
+            }}
+          >
+            Summary
+          </Typography>
         </Slide>
         <Slide in={summary} direction="right" timeout={250}>
           <Paper

@@ -27,7 +27,8 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 5,
     color: '#333',
     '@media (max-width: 600px)': {
-      justifyContent: 'space-evenly'
+      justifyContent: 'space-evenly',
+      marginBottom: 0
     }
   },
 }))
