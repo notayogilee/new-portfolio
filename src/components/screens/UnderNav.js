@@ -43,16 +43,13 @@ const UnderNav = () => {
     closeCircleNav()
   }
 
-  // particles is full screen when height/width ratio =< 0.5
+  // particles is full screen when height/width ratio~ =< 0.5
   // otherwise particles are pushed up
   // particles need RAM or else they are choppy
   // display only on larger screens
   const windowWidth = window.screen.width
   const windowHeight = window.screen.height
   const ratio = windowHeight / windowWidth
-
-  console.log('ratio', ratio, 'ww', windowWidth)
-
 
   return (
     <div style={{
