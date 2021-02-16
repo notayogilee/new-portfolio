@@ -63,7 +63,7 @@ const UnderNav = () => {
       position: 'absolute',
 
     }}>
-      {(windowWidth >= 1024) && (ratio <= 0.5) && showParticles &&
+      {(windowWidth >= 1024) && (ratio <= 0.6) && showParticles &&
         <Particles />
       }
 

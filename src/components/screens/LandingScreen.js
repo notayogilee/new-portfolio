@@ -22,27 +22,27 @@ import {
   LinkedIn
 } from '@material-ui/icons'
 
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: '#333'
-    }
-  },
-  typography: {
-    h1: {
-      fontSize: '5rem',
-      '@media (max-width: 600px)': {
-        fontSize: '3rem'
-      }
-    },
-    h2: {
-      fontSize: '3rem',
-      '@media (max-width: 600px)': {
-        fontSize: '2rem'
-      }
-    }
-  }
-})
+// const theme = createMuiTheme({
+//   palette: {
+//     primary: {
+//       main: '#333'
+//     }
+//   },
+//   typography: {
+//     h1: {
+//       fontSize: '5rem',
+//       '@media (max-width: 600px)': {
+//         fontSize: '3rem'
+//       }
+//     },
+//     h2: {
+//       fontSize: '3rem',
+//       '@media (max-width: 600px)': {
+//         fontSize: '2rem'
+//       }
+//     }
+//   }
+// })
 
 const useStyles = makeStyles((theme) => ({
   content: {
@@ -106,121 +106,121 @@ const LandingScreen = ({ home }) => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Container className={classes.content}>
-        <Slide in={home} timeout={250} direction="left">
-          <div className={classes.header}>
-            <Typography variant="h1">
-              Lee Castelani
+    // <ThemeProvider theme={theme}>
+    <Container className={classes.content}>
+      <Slide in={home} timeout={250} direction="left">
+        <div className={classes.header}>
+          <Typography variant="h1">
+            Lee Castelani
         </Typography>
-            <Typography variant="h5">
-              Fresh Junior Full Stack Developer
+          <Typography variant="h4">
+            Fresh Junior Full Stack Developer
           </Typography>
-          </div>
-        </Slide>
+        </div>
+      </Slide>
 
-        <Container className={classes.icons}>
-          <Hidden xsDown>
-            <Slide in={home} direction="up" timeout={250}>
-              <IconButton onClick={handleOpen}>
-                <Email style={{ fontSize: '60px' }} />
-              </IconButton>
-            </Slide>
-          </Hidden>
-          <Slide in={home} direction="up" timeout={500}>
-            <IconButton
-              href="https://github.com/notayogilee"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <GitHub style={{ fontSize: '60px' }} />
+      <Container className={classes.icons}>
+        <Hidden xsDown>
+          <Slide in={home} direction="up" timeout={250}>
+            <IconButton onClick={handleOpen}>
+              <Email style={{ fontSize: '60px' }} />
             </IconButton>
           </Slide>
-          <Slide in={home} direction="up" timeout={600}>
-            <IconButton
-              href="https://www.linkedin.com/in/lee-castelani-40bba31a5/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <LinkedIn style={{ fontSize: '60px' }} />
-            </IconButton>
-          </Slide>
-        </Container>
-        <Slide in={home} direction="right" timeout={250}>
-          <Typography variant="h2" style={{ height: 'auto' }}>
-            notayogilee@gmail.com
-        </Typography>
+        </Hidden>
+        <Slide in={home} direction="up" timeout={500}>
+          <IconButton
+            href="https://github.com/notayogilee"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GitHub style={{ fontSize: '60px' }} />
+          </IconButton>
         </Slide>
-        <Modal
-          aria-labelledby="email-modal"
-          className={classes.modal}
-          open={open}
-          onClose={handleClose}
-          closeAfterTransition
-          BackdropComponent={Backdrop}
-          BackdropProps={{
-            timeout: 500,
-          }}
-        >
-          <Fade in={open}>
-            <Container maxWidth="md" className={classes.message}>
-              <Paper style={{ padding: '1rem', textAlign: 'center' }}>
-                <Typography variant="h4" id="email-modal">
-                  Send me a message
-                </Typography>
-                <form
-                  name="contact"
-                  method="post"
-                  data-netlify="true"
-                  action="/contact/success"
-                  autoComplete="off"
-                  className={classes.form}
-                >
-                  <input type="hidden" name="form-name" value="contact" />
-                  <FormControl fullWidth={true} style={{ marginBottom: '0.25rem' }}>
-                    <InputLabel htmlFor="name">Name</InputLabel>
-                    <Input id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} />
-                  </FormControl>
-                  <FormControl fullWidth={true} style={{ marginBottom: '0.25rem' }}>
-                    <InputLabel htmlFor="email">Email</InputLabel>
-                    <Input id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                  </FormControl>
-                  <FormControl fullWidth={true} style={{ marginBottom: '0.25rem' }}>
-                    <InputLabel htmlFor="subject">Subject</InputLabel>
-                    <Input id="subject" name="subject" value={subject} onChange={(e) => setSubject(e.target.value)} />
-                  </FormControl>
-                  <FormControl fullWidth={true} style={{ marginBottom: '0.5rem' }}>
-                    <TextField
-                      name="message"
-                      id="message"
-                      multiline
-                      label="Message"
-                      style={{
-                        resize: "none",
-                        marginBottom: '0.25rem',
-                        color: '#333'
-                      }}
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                    />
-                  </FormControl>
-                  <Button
-                    type="submit"
-                    style={{ display: 'block', margin: 'auto', background: '#d68438' }}
-                    variant="contained"
-                  >
-                    <Typography
-                      style={{ color: '#333' }}
-
-                    > Send</Typography>
-                  </Button>
-                </form>
-              </Paper>
-            </Container>
-          </Fade>
-        </Modal>
+        <Slide in={home} direction="up" timeout={600}>
+          <IconButton
+            href="https://www.linkedin.com/in/lee-castelani-40bba31a5/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LinkedIn style={{ fontSize: '60px' }} />
+          </IconButton>
+        </Slide>
       </Container>
-    </ThemeProvider>
+      <Slide in={home} direction="right" timeout={250}>
+        <Typography variant="h3" style={{ height: 'auto' }}>
+          notayogilee@gmail.com
+        </Typography>
+      </Slide>
+      <Modal
+        aria-labelledby="email-modal"
+        className={classes.modal}
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={open}>
+          <Container maxWidth="md" className={classes.message}>
+            <Paper style={{ padding: '1rem', textAlign: 'center' }}>
+              <Typography variant="h4" id="email-modal">
+                Send me a message
+                </Typography>
+              <form
+                name="contact"
+                method="post"
+                data-netlify="true"
+                action="/contact/success"
+                autoComplete="off"
+                className={classes.form}
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                <FormControl fullWidth={true} style={{ marginBottom: '0.25rem' }}>
+                  <InputLabel htmlFor="name">Name</InputLabel>
+                  <Input id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} />
+                </FormControl>
+                <FormControl fullWidth={true} style={{ marginBottom: '0.25rem' }}>
+                  <InputLabel htmlFor="email">Email</InputLabel>
+                  <Input id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                </FormControl>
+                <FormControl fullWidth={true} style={{ marginBottom: '0.25rem' }}>
+                  <InputLabel htmlFor="subject">Subject</InputLabel>
+                  <Input id="subject" name="subject" value={subject} onChange={(e) => setSubject(e.target.value)} />
+                </FormControl>
+                <FormControl fullWidth={true} style={{ marginBottom: '0.5rem' }}>
+                  <TextField
+                    name="message"
+                    id="message"
+                    multiline
+                    label="Message"
+                    style={{
+                      resize: "none",
+                      marginBottom: '0.25rem',
+                      color: '#333'
+                    }}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                  />
+                </FormControl>
+                <Button
+                  type="submit"
+                  style={{ display: 'block', margin: 'auto', background: '#d68438' }}
+                  variant="contained"
+                >
+                  <Typography
+                    style={{ color: '#333' }}
+
+                  > Send</Typography>
+                </Button>
+              </form>
+            </Paper>
+          </Container>
+        </Fade>
+      </Modal>
+    </Container>
+    // </ThemeProvider>
   )
 }
 
