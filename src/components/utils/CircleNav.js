@@ -1,8 +1,6 @@
 import React, { useContext } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import {
-  IconButton
-} from '@material-ui/core'
+import { IconButton } from '@material-ui/core'
 import { Menu, Close } from '@material-ui/icons'
 import CircleNavContext from '../../context/circleNav/circleNavContext'
 
@@ -31,13 +29,13 @@ const useStyles = makeStyles({
   openButton: {
     position: 'absolute',
     left: '70%',
-    color: '#d68438'
+    color: '#F1B24B'
   },
   closeButton: {
     position: 'absolute',
     top: '50%',
     left: '-180%',
-    color: '#d68438'
+    color: '#F1B24B'
   }
 })
 

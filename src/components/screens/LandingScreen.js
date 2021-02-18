@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { makeStyles, createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 import {
   Container,
   Typography,
@@ -21,28 +21,6 @@ import {
   GitHub,
   LinkedIn
 } from '@material-ui/icons'
-
-// const theme = createMuiTheme({
-//   palette: {
-//     primary: {
-//       main: '#333'
-//     }
-//   },
-//   typography: {
-//     h1: {
-//       fontSize: '5rem',
-//       '@media (max-width: 600px)': {
-//         fontSize: '3rem'
-//       }
-//     },
-//     h2: {
-//       fontSize: '3rem',
-//       '@media (max-width: 600px)': {
-//         fontSize: '2rem'
-//       }
-//     }
-//   }
-// })
 
 const useStyles = makeStyles((theme) => ({
   content: {
@@ -106,7 +84,6 @@ const LandingScreen = ({ home }) => {
   };
 
   return (
-    // <ThemeProvider theme={theme}>
     <Container className={classes.content}>
       <Slide in={home} timeout={250} direction="left">
         <div className={classes.header}>
@@ -220,7 +197,6 @@ const LandingScreen = ({ home }) => {
         </Fade>
       </Modal>
     </Container>
-    // </ThemeProvider>
   )
 }
 

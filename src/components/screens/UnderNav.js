@@ -19,10 +19,6 @@ const UnderNav = () => {
   const { openHomeScreen, openResumeScreen, openProjectsScreen } = screenContext
   const { fetchProjectsDetails } = projectsContext
 
-  const noScroll = function () {
-    window.scrollTo(0, 0)
-  }
-
   const openHome = async () => {
     await openHomeScreen()
     window.removeEventListener('scroll', noScroll)
@@ -32,6 +28,10 @@ const UnderNav = () => {
     await openResumeScreen()
     window.removeEventListener('scroll', noScroll)
     closeCircleNav()
+  }
+
+  const noScroll = function () {
+    window.scrollTo(0, 0)
   }
 
   const openProjects = () => {
