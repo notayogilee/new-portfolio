@@ -59,14 +59,14 @@ const Skills = ({ skills }) => {
 
             <Typography variant="h2">Languages: </Typography>
             <Typography variant="h3">
-              HTML, CSS, javaScript, SQL, Ruby
+              HTML, CSS, javaScript, SQL, GraphQL, Ruby
           </Typography>
 
             <Typography variant="h2">Frameworks & Libraries: </Typography>
             <Typography variant="h3">
-              ReactJS, NodeJS, Express, Rails, jQuery,Material-UI, Bootstrap, Jest, Cypress, Mocha, Chai
+              ReactJS, NodeJS, Express, Mongoose, Rails, jQuery,Material-UI, Bootstrap, Jest, Cypress, Mocha, Chai
           </Typography>
-            <Typography variant="h2">Databases: </Typography>
+            <Typography variant="h2">Databases/CMS: </Typography>
             <Typography variant="h3">
               postgreSQL, MongoDB, Sanity
           </Typography>
