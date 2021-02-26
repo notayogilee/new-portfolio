@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import imageUrlBuilder from '@sanity/image-url'
 import sanityClient from '../../client'
 import CircleNavContext from '../../context/circleNav/circleNavContext'
@@ -10,7 +10,8 @@ import { makeStyles } from '@material-ui/core/styles'
 import {
   Container,
   Typography,
-  Grid
+  Grid,
+  Fade
 } from '@material-ui/core'
 import ProjectItem from '../utils/ProjectItem'
 import TopButton from '../utils/TopButton'
@@ -62,6 +63,16 @@ const ProjectsScreen = () => {
   const circleNavContext = useContext(CircleNavContext)
   const screenContext = useContext(ScreenContext)
   const projectsContext = useContext(ProjectsContext)
+
+  const [showTopButton, setShowTopButton] = useState(false)
+
+  window.addEventListener("scroll", (e) => {
+    if (window.scrollY === 0) {
+      setShowTopButton(false)
+    } else {
+      setShowTopButton(true)
+    }
+  })
 
   const classes = useStyles();
 
@@ -118,7 +129,9 @@ const ProjectsScreen = () => {
       }
       )
       }
-      <TopButton />
+      {showTopButton &&
+        <TopButton />
+      }
     </Container>
   )
 }

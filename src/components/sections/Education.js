@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import BlockContent from '@sanity/block-content-to-react'
 import EducationContext from '../../context/education/educationContext'
 import moment from 'moment'
@@ -36,6 +36,16 @@ const Education = () => {
   const educationContext = useContext(EducationContext)
 
   const { education, loading } = educationContext
+
+  const [showTopButton, setShowTopButton] = useState(false)
+
+  window.addEventListener("scroll", (e) => {
+    if (window.scrollY === 0) {
+      setShowTopButton(false)
+    } else {
+      setShowTopButton(true)
+    }
+  })
 
   return (
     <Container className={classes.root} maxWidth="lg" disableGutters>
@@ -76,7 +86,9 @@ const Education = () => {
         )
       })
       }
-      <TopButton />
+      {showTopButton &&
+        <TopButton />
+      }
     </Container>
   )
 }

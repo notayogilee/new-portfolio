@@ -40,7 +40,6 @@ const Skills = ({ skills }) => {
   const classes = useStyles()
 
   return (
-    // <ThemeProvider theme={theme}>
     <div className={classes.root}>
       <Slide in={skills} direction="left" timeout={250}>
         <Typography
@@ -74,7 +73,6 @@ const Skills = ({ skills }) => {
         </div>
       </Slide>
     </div>
-    // </ThemeProvider>
   )
 }
 
