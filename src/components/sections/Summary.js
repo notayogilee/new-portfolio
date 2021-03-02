@@ -6,7 +6,7 @@ import {
   Paper,
   Slide
 } from '@material-ui/core'
-import laptop from '../../images/bootcamp.jpg'
+import laptop from '../../images/bootcamp.png'
 
 const useStyles = makeStyles((theme) => ({
   root: {
