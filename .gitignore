@@ -9,6 +9,9 @@ node_modules
 # skills page if I need to redo
 src/skillsModel
 
+/portfolio
+portfolio
+
 # testing
 /coverage
 

@@ -63,11 +63,11 @@ const Skills = ({ skills }) => {
 
             <Typography variant="h2">Frameworks & Libraries: </Typography>
             <Typography variant="h3">
-              ReactJS, NodeJS, Express, Mongoose, Rails, jQuery,Material-UI, Bootstrap, Jest, Cypress, Mocha, Chai
+              ReactJS, NodeJS, Express, Mongoose, Rails, jQuery, Material-UI, Bootstrap, Jest, Cypress, Mocha, Chai
           </Typography>
             <Typography variant="h2">Databases/CMS: </Typography>
             <Typography variant="h3">
-              postgreSQL, MongoDB, Sanity
+              PostgreSQL, MongoDB, Sanity
           </Typography>
           </div>
         </div>
