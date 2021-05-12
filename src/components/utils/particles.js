@@ -28,8 +28,7 @@ const particles = () => {
             onHover: {
               enable: true,
               mode: "repulse",
-            },
-            resize: true,
+            }
           },
           modes: {
             bubble: {

@@ -99,7 +99,7 @@ const LandingScreen = ({ home }) => {
       <Container className={classes.icons}>
         <Hidden xsDown>
           <Slide in={home} direction="up" timeout={250}>
-            <IconButton onClick={handleOpen}>
+            <IconButton onClick={handleOpen} aria-label="Contact form">
               <Email style={{ fontSize: '60px' }} />
             </IconButton>
           </Slide>
@@ -109,6 +109,7 @@ const LandingScreen = ({ home }) => {
             href="https://github.com/notayogilee"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="GitHub"
           >
             <GitHub style={{ fontSize: '60px' }} />
           </IconButton>
@@ -118,6 +119,7 @@ const LandingScreen = ({ home }) => {
             href="https://www.linkedin.com/in/lee-castelani-40bba31a5/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="LinkedIn"
           >
             <LinkedIn style={{ fontSize: '60px' }} />
           </IconButton>

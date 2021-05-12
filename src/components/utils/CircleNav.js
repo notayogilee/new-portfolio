@@ -62,6 +62,7 @@ const CircleNav = () => {
           className={classes.iconButton}
           onClick={handleOpen}
           disableRipple="true"
+          aria-label="open main menu"
         >
           <Menu fontSize="large" className={classes.openButton} />
         </IconButton>
@@ -69,6 +70,7 @@ const CircleNav = () => {
           className={classes.iconButton}
           onClick={handleClose}
           disableRipple="true"
+          aria-label="close main menu"
         >
           <Close fontSize="large" className={classes.closeButton} />
         </IconButton>
