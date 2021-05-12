@@ -85,7 +85,7 @@ const LandingScreen = ({ home }) => {
 
   return (
     <Container className={classes.content}>
-      <Slide in={home} timeout={250} direction="left">
+      <Slide in={home} direction="left">
         <div className={classes.header}>
           <Typography variant="h1">
             Lee Castelani
@@ -98,13 +98,13 @@ const LandingScreen = ({ home }) => {
 
       <Container className={classes.icons}>
         <Hidden xsDown>
-          <Slide in={home} direction="up" timeout={250}>
+          <Slide in={home} direction="up">
             <IconButton onClick={handleOpen} aria-label="Contact form">
               <Email style={{ fontSize: '60px' }} />
             </IconButton>
           </Slide>
         </Hidden>
-        <Slide in={home} direction="up" timeout={500}>
+        <Slide in={home} direction="up">
           <IconButton
             href="https://github.com/notayogilee"
             target="_blank"
@@ -114,7 +114,7 @@ const LandingScreen = ({ home }) => {
             <GitHub style={{ fontSize: '60px' }} />
           </IconButton>
         </Slide>
-        <Slide in={home} direction="up" timeout={600}>
+        <Slide in={home} direction="up">
           <IconButton
             href="https://www.linkedin.com/in/lee-castelani-40bba31a5/"
             target="_blank"
@@ -125,7 +125,7 @@ const LandingScreen = ({ home }) => {
           </IconButton>
         </Slide>
       </Container>
-      <Slide in={home} direction="right" timeout={250}>
+      <Slide in={home} direction="right">
         <Typography variant="h3" style={{ height: 'auto' }}>
           notayogilee@gmail.com
         </Typography>
@@ -138,7 +138,7 @@ const LandingScreen = ({ home }) => {
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
-          timeout: 500,
+          timeout: 200,
         }}
       >
         <Fade in={open}>

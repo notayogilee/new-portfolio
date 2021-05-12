@@ -48,7 +48,7 @@ const Summary = ({ summary }) => {
   return (
     <div>
       <Container className={classes.root} maxWidth="lg" disableGutters >
-        <Slide in={summary} direction="left" timeout={250}>
+        <Slide in={summary} direction="left">
           <Typography
             variant="h1"
             style={{
@@ -58,7 +58,7 @@ const Summary = ({ summary }) => {
             Summary
           </Typography>
         </Slide>
-        <Slide in={summary} direction="right" timeout={250}>
+        <Slide in={summary} direction="right">
           <Paper
             className={classes.container}
           >

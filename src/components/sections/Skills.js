@@ -43,7 +43,7 @@ const Skills = ({ skills }) => {
 
   return (
     <div className={classes.root}>
-      <Slide in={skills} direction="left" timeout={250}>
+      <Slide in={skills} direction="left">
         <Typography
           component="div"
           variant="h1"
@@ -54,7 +54,7 @@ const Skills = ({ skills }) => {
           Skills
         </Typography>
       </Slide>
-      <Slide in={skills} direction="right" timeout={250}>
+      <Slide in={skills} direction="right">
         <div className={classes.container}>
           <div className={classes.text}>
 
