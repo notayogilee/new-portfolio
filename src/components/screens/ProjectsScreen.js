@@ -1,17 +1,14 @@
 import React, { useContext, useState } from 'react'
 import imageUrlBuilder from '@sanity/image-url'
 import sanityClient from '../../client'
-import CircleNavContext from '../../context/circleNav/circleNavContext'
 import moment from 'moment'
-import ScreenContext from '../../context/screen/screenContext'
 import ProjectsContext from '../../context/projects/projectsContext'
 import BlockContent from '@sanity/block-content-to-react';
 import { makeStyles } from '@material-ui/core/styles'
 import {
   Container,
   Typography,
-  Grid,
-  Fade
+  Grid
 } from '@material-ui/core'
 import ProjectItem from '../utils/ProjectItem'
 import TopButton from '../utils/TopButton'
@@ -60,8 +57,6 @@ const useStyles = makeStyles({
 })
 
 const ProjectsScreen = () => {
-  const circleNavContext = useContext(CircleNavContext)
-  const screenContext = useContext(ScreenContext)
   const projectsContext = useContext(ProjectsContext)
 
   const [showTopButton, setShowTopButton] = useState(false)
@@ -76,9 +71,7 @@ const ProjectsScreen = () => {
 
   const classes = useStyles();
 
-  const bodyId = circleNavContext.bodyId
-  const { projects } = screenContext
-  const { projects: myProjects, loading } = projectsContext
+  const { projects, loading } = projectsContext
 
   return (
     <Container className={classes.root} maxWidth="lg" disableGutters>
@@ -87,7 +80,7 @@ const ProjectsScreen = () => {
           <Spinner />
         </div>
       }
-      {myProjects && myProjects.length > 0 && myProjects.map((projectType) => {
+      {projects && projects.length > 0 && projects.map((projectType) => {
         return (
           <>
             <div className={classes.header}>

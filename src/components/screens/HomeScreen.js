@@ -72,8 +72,6 @@ const HomeScreen = () => {
   const classes = useStyles();
 
   const bodyId = circleNavContext.bodyId
-  const circleNavOpen = circleNavContext.open
-
   const { home, resume, projects } = screenContext
 
   return (

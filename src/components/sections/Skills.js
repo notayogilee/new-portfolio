@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Typography, Slide } from '@material-ui/core'
 import laptop from '../../images/laptopSkills.jpg'
 
+
+
 const useStyles = makeStyles((theme) => ({
   root: {
     height: 'auto',

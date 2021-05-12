@@ -5,8 +5,7 @@ import ProjectsContext from '../../context/projects/projectsContext'
 import {
   Typography,
   Slide,
-  Button,
-  Fade
+  Button
 } from '@material-ui/core'
 import Particles from '../utils/particles'
 
@@ -78,7 +77,7 @@ const UnderNav = () => {
       }}>
         <Slide in={open} direction="right" timeout={500}>
           <Button
-            disableRipple='true'
+            disableRipple={true}
             onClick={openHome}
             style={{ zIndex: 100 }}>
             <Typography variant="h6" style={{ textTransform: 'uppercase', margin: '20px 0', color: '#fff' }}>Home</Typography>
@@ -86,13 +85,13 @@ const UnderNav = () => {
         </Slide>
 
         <Slide in={open} direction="right" timeout={500}>
-          <Button onClick={openResume} disableRipple='true'>
+          <Button onClick={openResume} disableRipple={true}>
             <Typography variant="h6" style={{ textTransform: 'uppercase', margin: '20px 0', color: '#fff' }}>Resume</Typography>
           </Button>
         </Slide>
 
         <Slide in={open} direction="right" timeout={500}>
-          <Button onClick={openProjects} disableRipple='true'>
+          <Button onClick={openProjects} disableRipple={true}>
             <Typography variant="h6" style={{ textTransform: 'uppercase', margin: '20px 0', color: '#fff' }}>Projects</Typography>
           </Button>
         </Slide>
