@@ -3,7 +3,8 @@ import { makeStyles } from '@material-ui/core/styles'
 import {
   Container,
   Typography,
-  Slide
+  Slide,
+  Link
 } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
@@ -31,6 +32,14 @@ const useStyles = makeStyles((theme) => ({
       padding: '0.5rem'
     }
   },
+  link: {
+    color: '#333',
+    display: 'inline !important',
+    '&:hover': {
+      textDecoration: 'none',
+      color: '#F1B24B'
+    }
+  }
 }))
 
 const Experience = ({ experience }) => {
@@ -45,24 +54,36 @@ const Experience = ({ experience }) => {
         <div
           className={classes.container}
         >
-          <Typography
-            variant="h3"
-            paragraph
-          >
-            McGill University Health Center
-        </Typography>
+          <Link className={classes.link} href="https://icam.com" target="_blank" referrer="norefferer">
+            <Typography
+              variant="h3"
+              paragraph
+            >
+              ICAM Technologies
+            </Typography>
+          </Link>
+
           <Typography
             paragraph
             variant="h6">
-            2008-2020
-        </Typography>
+            Full Stack Developer - Marketing Team
+          </Typography>
+          <Typography
+            paragraph
+            variant="h6">
+            August 2021 - present
+          </Typography>
           <Typography
             variant="h6">
-            Worked in various departments: main pharmacy, I.C.U., O.R., and oncology.
-            Specializing in oncology, part of a team that processed and prepared medications and chemotherapy.
-            Adapted to constantly changing protocols, norms and procedures.
-            Involved in relocating and setting up pharmacy in new hospital.
-        </Typography>
+            Refactoring, maintaining and adding features to online quoting app using Vue.js and PHP. Add and improve
+            features on intranet using PHP. Contribute ideas for marketing strategies.
+          </Typography>
+          <Link className={classes.link} href="https://quote.icam.com/getting-started/solution" target="_blank" referrer="norefferer">
+            <Typography variant='h3'>
+              quote.icam.com
+            </Typography>
+          </Link>
+
         </div>
       </Slide>
     </Container>

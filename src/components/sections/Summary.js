@@ -62,7 +62,9 @@ const Summary = ({ summary }) => {
           <Paper
             className={classes.container}
           >
-            <Typography variant="h3" className={classes.text}>Pharmacy tech turned full-stack web developer, eager to contribute to a team, sharpen & add new skills. I transformed my hobby for coding into a passion and took the leap to make it a career. I left my job with a partial scholarship from Lighthouse Labs to get the foundation I needed and am now excited about the new challenges awaiting.</Typography>
+            <Typography variant="h3" className={classes.text}>Junior Full Stack Developer who firmly believes that there is a solution to every problem, you just have to find it.
+              Passionate about coding and respect best practices. Love to work on a team and learn from each other as well
+              as alone exploring on my own. Looking for a positive environment where I can grow with a bit of guidance.</Typography>
 
           </Paper>
         </Slide>

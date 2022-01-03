@@ -3,8 +3,6 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Typography, Slide } from '@material-ui/core'
 import laptop from '../../images/laptopSkills.jpg'
 
-
-
 const useStyles = makeStyles((theme) => ({
   root: {
     height: 'auto',
@@ -60,17 +58,17 @@ const Skills = ({ skills }) => {
 
             <Typography variant="h2">Languages: </Typography>
             <Typography variant="h3">
-              HTML, CSS, JavaScript, SQL, GraphQL, Ruby
-          </Typography>
+              HTML, CSS, JavaScript, SQL, GraphQL
+            </Typography>
 
             <Typography variant="h2">Frameworks & Libraries: </Typography>
             <Typography variant="h3">
-              ReactJS, NodeJS, Express, Mongoose, Rails, jQuery, Material-UI, Bootstrap, Jest, Cypress, Mocha, Chai
-          </Typography>
+              ReactJS, NextJS, VueJS, NodeJS, Express, Mongoose, jQuery, Material-UI, Bootstrap, Jest, Cypress, Mocha, Chai
+            </Typography>
             <Typography variant="h2">Databases/CMS: </Typography>
             <Typography variant="h3">
               PostgreSQL, MongoDB, Sanity
-          </Typography>
+            </Typography>
           </div>
         </div>
       </Slide>

@@ -17,7 +17,7 @@ import Spinner from '../utils/Spinner'
 // image builder tailored for the image in the response from sanity backend
 const builder = imageUrlBuilder(sanityClient)
 
-function urlFor(source) {
+function urlFor (source) {
   return builder.image(source)
 }
 
@@ -105,7 +105,7 @@ const ProjectsScreen = () => {
                     <ProjectItem
                       image={project.mainImage}
                       gitHubLink={project.gitHubLink}
-                      deployedLink={project.deployedLink}
+                      // deployedLink={project.deployedLink}
                       isCompleted={project.isCompleted}
                       dateCompleted={project.dateCompleted ? moment(project.dateCompleted).format("MMM YYYY") : ""}
                       title={project.title}
